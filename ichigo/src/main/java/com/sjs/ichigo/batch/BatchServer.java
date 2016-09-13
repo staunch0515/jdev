@@ -67,6 +67,7 @@ public class BatchServer {
 		service = (IService) applicationContext.getBean(serviceName);
 		service.setAppClient((AppClient) appClient);
 		try {
+			//
 			service.exeService();
 		} catch (DataException e) {
 			e.printStackTrace();
