@@ -9,14 +9,10 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -38,19 +34,8 @@ import com.sjs.ichigo.data.IDataSet;
 import com.sjs.ichigo.utility.AppUtility;
 import com.sjs.ichigo.utility.DateTimeUtility;
 import com.sjs.ichigo.utility.SpringUtility;
-import com.sjs.ichigo.utility.WebUtility;
 
 public class BatchAppClient implements AppClient {
-
-	// 客户端请求
-	private HttpServletRequest request;
-
-	// 客户端响应
-	private HttpServletResponse response;
-
-	public HttpServletResponse getResponse() {
-		return response;
-	}
 
 	// 全局属性
 	private static HashMap<String, Object> appMap = new HashMap<String, Object>();
@@ -79,29 +64,6 @@ public class BatchAppClient implements AppClient {
 	private List<String> logList = new ArrayList<String>();
 	//
 	private String errorMessage = "";
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.sjs.ichigo.web.AppClient#setRequest(javax.servlet.http.
-	 * HttpServletRequest )
-	 */
-	public void setRequest(HttpServletRequest request) {
-		this.request = request;
-		// 在有新申请时，清理请求数据列表
-		requestDataList.clear();
-		requestDataListMap.clear();
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.sjs.ichigo.web.AppClient#setResponse(javax.servlet.http.
-	 * HttpServletResponse)
-	 */
-	public void setResponse(HttpServletResponse response) {
-		this.response = response;
-	}
 
 	private AppUser loginuser = null;
 
@@ -200,14 +162,7 @@ public class BatchAppClient implements AppClient {
 	 */
 
 	public void output() {
-		try {
-			if (response != null) {
-				response.getWriter().write(getJson().toString());
-			}
-		} catch (IOException e) {
 
-			e.printStackTrace();
-		}
 	}
 
 	public void end() {
@@ -235,7 +190,6 @@ public class BatchAppClient implements AppClient {
 	 */
 
 	public void close() {
-		this.request.getSession().removeAttribute("appclient");
 		this.loginuser = null;
 	}
 
@@ -335,10 +289,6 @@ public class BatchAppClient implements AppClient {
 			return this.contextMap.get(key);
 		}
 
-		if (this.request != null && this.request.getParameter(key) != null) {
-			return this.request.getParameter(key);
-		}
-
 		if (clientMap.get(key) != null) {
 			return clientMap.get(key);
 		}
@@ -369,15 +319,6 @@ public class BatchAppClient implements AppClient {
 			String key = context.next();
 			if (!mm.containsKey(key)) {
 				mm.put(key, null);
-			}
-		}
-		if (this.request != null) {
-			Enumeration<String> reqset = this.request.getParameterNames();
-			while (reqset.hasMoreElements()) {
-				String key = reqset.nextElement();
-				if (!mm.containsKey(key)) {
-					mm.put(key, null);
-				}
 			}
 		}
 		return mm.keySet();
@@ -758,20 +699,6 @@ public class BatchAppClient implements AppClient {
 		this.requestDataList.clear();
 
 		this.log("WebAppClient->open  At " + DateTimeUtility.GetCurTime("yyyy-MM-dd HH:mm:ss"));
-		this.log("Request URL=" + this.request.getRequestURL());
-		Enumeration<String> ee = this.request.getParameterNames();
-		if (this.request.getParameter("actionid") != null) {
-			this.log("actionid=" + this.request.getParameter("actionid"));
-
-			this.actionid = this.request.getParameter("actionid");
-			this.extActionId(actionid);
-		}
-
-		while (ee.hasMoreElements()) {
-			String paraname = ee.nextElement();
-			if (!paraname.equals("actionid") && !paraname.equals("_"))
-				this.log(paraname + "=" + this.request.getParameter(paraname));
-		}
 	}
 
 	public void clear() {
@@ -878,14 +805,6 @@ public class BatchAppClient implements AppClient {
 		}
 	}
 
-	public List getContextList(String string) {
-		return WebUtility.getRequestList(this.request, string);
-	}
-
-	public String[] getContexttArray(String string) {
-		return WebUtility.getRequestArray(this.request, string);
-	}
-
 	public void ExeService(String serviceName) throws AppException {
 		IService service = (IService) this.getContextObject(serviceName);
 		if (service != null) {
@@ -958,5 +877,15 @@ public class BatchAppClient implements AppClient {
 
 	public String getLanguage() {
 		return lang;
+	}
+
+	public List<String> getContextList(String string) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	public String[] getContexttArray(String string) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
 	}
 }

@@ -8,7 +8,7 @@ public class SimpeService extends AbstractService {
 	@Override
 	public void exeService() throws AppException {
 
-		// HashMap map=this.getAppClient().
+		System.out.println(this.getAppClient().getClass().getName());
 
 	}
 
