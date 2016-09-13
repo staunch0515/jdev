@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="KHK Ltd" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1968-03-24" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="hashizume.munekazu@gmail.com" name="Email" />
+
+		<property value="1070062" name="PostCode" />
+
+		<property value="2-4-15 minamiaoyama minato-ku tokyo" name="Address" />
+
+		<property value="0357722223" name="Phone" />
+
+		<property value="munekhk2132" name="NickName" />
+
+		<property value="Mizuho Bank" name="txtBankName" />
+
+		<property value="shinjukuchuo" name="txtBranchName" />
+
+		<property value="MHCBJPJT" name="txtSWIFTNo" />
+
+		<property value="3-4-1 shinjyuku shinjyuku-ku tokyo" name="txtBankAddress" />
+
+		<property value="0333564111" name="txtBankPhone" />
+
+		<property value="2980927" name="txtAccountNo" />
+
+		<property value="KHK Ltd" name="txtBankHolder" />
+
+		<property value="9000001" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="8000001" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="associehumanite Ltd" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1968-03-24" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="associe@associehumanite.jp" name="Email" />
+
+		<property value="1006290" name="PostCode" />
+
+		<property value="1-11-1 marunouchi chiyoda-ku tokyo" name="Address" />
+
+		<property value="0357723939" name="Phone" />
+
+		<property value="muneassocie2132" name="NickName" />
+
+		<property value="Mizuho Bank" name="txtBankName" />
+
+		<property value="gotanda" name="txtBranchName" />
+
+		<property value="MHCBJPJT" name="txtSWIFTNo" />
+
+		<property value="1-27-2 nishigotanda shinagawa-ku tokyo"
+			name="txtBankAddress" />
+
+		<property value="0334924541" name="txtBankPhone" />
+
+		<property value="2898307" name="txtAccountNo" />
+
+		<property value="associehumanite Ltd" name="txtBankHolder" />
+
+		<property value="9000002" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="8000001" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="tomoki kashiwazaki" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="2007-12-18" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="tomoki@khk.mobi" name="Email" />
+
+		<property value="1130031" name="PostCode" />
+
+		<property value="2-6-9 nedu bunkyo-ku tokyo" name="Address" />
+
+		<property value="09034772952" name="Phone" />
+
+		<property value="munetomoki2132" name="NickName" />
+
+		<property value="Sumitomo Mitsui Banking Corporation" name="txtBankName" />
+
+		<property value="tukiji" name="txtBranchName" />
+
+		<property value="MBCJPJT" name="txtSWIFTNo" />
+
+		<property value="2-11-24 tukiji chuo-ku tokyo" name="txtBankAddress" />
+
+		<property value="0335415531" name="txtBankPhone" />
+
+		<property value="7357951" name="txtAccountNo" />
+
+		<property value="tomoki kashiwazaki" name="txtBankHolder" />
+
+		<property value="9000003" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="9000001" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="masumi kasiwazaki" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1977-05-20" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="masumi@khk.mobi" name="Email" />
+
+		<property value="1130031" name="PostCode" />
+
+		<property value="2-6-9 nedu bunkyo-ku tokyo" name="Address" />
+
+		<property value="09093020520" name="Phone" />
+
+		<property value="munemasumi2132" name="NickName" />
+
+		<property value="Mizuho Bank" name="txtBankName" />
+
+		<property value="nedu" name="txtBranchName" />
+
+		<property value="MHCBJPJT" name="txtSWIFTNo" />
+
+		<property value="2-7-9 nedu bunkyo-ku tokyo" name="txtBankAddress" />
+
+		<property value="0338218181" name="txtBankPhone" />
+
+		<property value="1475762" name="txtAccountNo" />
+
+		<property value="masumi kashiwazaki" name="txtBankHolder" />
+
+		<property value="9000004" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="9000001" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="kouhei hashizume" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1939-06-24" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="kouhei@khk.mobi" name="Email" />
+
+		<property value="2620023" name="PostCode" />
+
+		<property value="5-2202-7 kemigawa hanamigawa-ku chiba-ken"
+			name="Address" />
+
+		<property value="09022560722" name="Phone" />
+
+		<property value="munekouhei2132" name="NickName" />
+
+		<property value="Mizuho Bank" name="txtBankName" />
+
+		<property value="ginzadori" name="txtBranchName" />
+
+		<property value="MHCBJPJT" name="txtSWIFTNo" />
+
+		<property value="5-8-15 ginza cyuo-ku tokyo" name="txtBankAddress" />
+
+		<property value="0335725811" name="txtBankPhone" />
+
+		<property value="1092442" name="txtAccountNo" />
+
+		<property value="kouhei hashizume" name="txtBankHolder" />
+
+		<property value="9000005" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="9000002" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="kawakami naohiro" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1975-2-19" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="kawakamix219@gmail.com" name="Email" />
+
+		<property value="3320006" name="PostCode" />
+
+		<property value="1-4-9-1001 suehiro,kawaguchi-shi,saitama"
+			name="Address" />
+
+		<property value="090-8046-6492" name="Phone" />
+
+		<property value="kawakamix" name="NickName" />
+
+		<property value="mitsubishitokyoufj" name="txtBankName" />
+
+		<property value="urayasuekimae" name="txtBranchName" />
+
+		<property value="botkjpjt" name="txtSWIFTNo" />
+
+		<property value="1-17-11 hokuei,urayasu-shi,tiba" name="txtBankAddress" />
+
+		<property value="047-354-3341" name="txtBankPhone" />
+
+		<property value="4655335" name="txtAccountNo" />
+
+		<property value="kawakaminaohiro" name="txtBankHolder" />
+
+		<property value="9000006" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="9000002" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="shoji kume" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1963-08-20" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="trick.or.treat0820@gmail.com" name="Email" />
+
+		<property value="1530065" name="PostCode" />
+
+		<property value="2-38-29-101 nakachou meguro-ku tokyo" name="Address" />
+
+		<property value="08041622573" name="Phone" />
+
+		<property value="DOLLY" name="NickName" />
+
+		<property value="Bank of Tokyo-Mitsubishi UFJ" name="txtBankName" />
+
+		<property value="yutenji" name="txtBranchName" />
+
+		<property value="BOTKJPJT" name="txtSWIFTNo" />
+
+		<property value="2-9-1 yutenji meguro-ku tokyo" name="txtBankAddress" />
+
+		<property value="0337140131" name="txtBankPhone" />
+
+		<property value="5023420" name="txtAccountNo" />
+
+		<property value="syoji kume" name="txtBankHolder" />
+
+		<property value="9000007" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="9000003" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="teruko hashizume" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1943-07-12" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="teruko@khk.mobi" name="Email" />
+
+		<property value="2620023" name="PostCode" />
+
+		<property value="5-2202-7 kemigawa hanamigawa-ku chiba-ken Japan"
+			name="Address" />
+
+		<property value="09024330234" name="Phone" />
+
+		<property value="muneteruko2132" name="NickName" />
+
+		<property value="The Chiba Bank" name="txtBankName" />
+
+		<property value="masago" name="txtBranchName" />
+
+		<property value="CHBAJPJT" name="txtSWIFTNo" />
+
+		<property value="4-1-5 masago mihama-ku chiba-ken" name="txtBankAddress" />
+
+		<property value="0432798111" name="txtBankPhone" />
+
+		<property value="2012848" name="txtAccountNo" />
+
+		<property value="teruko hashizume" name="txtBankHolder" />
+
+		<property value="9000008" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="9000003" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="toshihiro watanabe" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1975-05-27" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="nubersoul@t.vodafone.ne.jp" name="Email" />
+
+		<property value="1540001" name="PostCode" />
+
+		<property value="3-27-7-201 ikejiri setagaya-ku tokyo" name="Address" />
+
+		<property value="08031553561" name="Phone" />
+
+		<property value="watatoshi" name="NickName" />
+
+		<property value="Mizuho Bank" name="txtBankName" />
+
+		<property value="kobunacyo" name="txtBranchName" />
+
+		<property value="MHCBJPJT" name="txtSWIFTNo" />
+
+		<property value="8-1 kobunacyo cyuo-ku tokyo" name="txtBankAddress" />
+
+		<property value="0336613111" name="txtBankPhone" />
+
+		<property value="1189112" name="txtAccountNo" />
+
+		<property value="toshihiro watanabe" name="txtBankHolder" />
+
+		<property value="9000009" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="9000006" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="naomi kume" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1970-02-14" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="kururi.2k14nao@gmail.com" name="Email" />
+
+		<property value="1530065" name="PostCode" />
+
+		<property value="2-38-29-101 nakachou meguro-ku tokyo" name="Address" />
+
+		<property value="09077008371" name="Phone" />
+
+		<property value="DOLLY2" name="NickName" />
+
+		<property value="Mizuho Bank" name="txtBankName" />
+
+		<property value="yutenji" name="txtBranchName" />
+
+		<property value="MHCBJPJT" name="txtSWIFTNo" />
+
+		<property value="2-1-6 yutenji meguro-ku tokyo" name="txtBankAddress" />
+
+		<property value="0337118181" name="txtBankPhone" />
+
+		<property value="8047185" name="txtAccountNo" />
+
+		<property value="naomi kume" name="txtBankHolder" />
+
+		<property value="90000010" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="9000007" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="yoshie nakajima" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1932-04-10" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="kururi.2n1a4o.k@gmail.com" name="Email" />
+
+		<property value="1530065" name="PostCode" />
+
+		<property value="2-38-29-101 nakachou meguro-ku tokyo" name="Address" />
+
+		<property value="08034619760" name="Phone" />
+
+		<property value="DOLLY3" name="NickName" />
+
+		<property value="The Bank of Yokohama" name="txtBankName" />
+
+		<property value="oiso" name="txtBranchName" />
+
+		<property value="HAMAJPJT" name="txtSWIFTNo" />
+
+		<property value="1108, Oiso, Oiso-machi, Naka-gun, Kanagawa-ken"
+			name="txtBankAddress" />
+
+		<property value="0463611590" name="txtBankPhone" />
+
+		<property value="6024335" name="txtAccountNo" />
+
+		<property value="yoshie nakajima" name="txtBankHolder" />
+
+		<property value="90000011" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="9000007" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="mitsuhiro tsuji" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1967-07-15" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="tsujimitsuhiro@gmail.com" name="Email" />
+
+		<property value="1100012" name="PostCode" />
+
+		<property value="2-19-7-901 ryusen taito-ku tokyo" name="Address" />
+
+		<property value="09098181713" name="Phone" />
+
+		<property value="Haisai" name="NickName" />
+
+		<property value="Bank of Tokyo-Mitsubishi UFJ" name="txtBankName" />
+
+		<property value="ueno" name="txtBranchName" />
+
+		<property value="BOTKJPJT" name="txtSWIFTNo" />
+
+		<property value="1-14-4 higashiueno taito-ku tokyo" name="txtBankAddress" />
+
+		<property value="0338318135" name="txtBankPhone" />
+
+		<property value="0120210" name="txtAccountNo" />
+
+		<property value="mitsuhiro tsuji" name="txtBankHolder" />
+
+		<property value="90000012" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="90000010" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="K's planning Ltd" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="2009-8-18" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="hotrodman@hotmail.com" name="Email" />
+
+		<property value="1530065" name="PostCode" />
+
+		<property value="2-50-13-4B nakacyou meguro-ku tokyo" name="Address" />
+
+		<property value="03-3760-8008" name="Phone" />
+
+		<property value="k2" name="NickName" />
+
+		<property value="Mizuho Bank" name="txtBankName" />
+
+		<property value="yutenji" name="txtBranchName" />
+
+		<property value="MHCBJPJT" name="txtSWIFTNo" />
+
+		<property value="2-1-6 yutenji meguro-ku tokyo" name="txtBankAddress" />
+
+		<property value="0337118181" name="txtBankPhone" />
+
+		<property value="1757799" name="txtAccountNo" />
+
+		<property value="K's planning Ltd" name="txtBankHolder" />
+
+		<property value="90000013" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="90000010" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="hideo watanabe" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1965-01-24" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="ooba9071@yahoo.co.jp" name="Email" />
+
+		<property value="1070062" name="PostCode" />
+
+		<property value="2-29-6 aoyama thetower　minamiaoyama minato-ku tokyo"
+			name="Address" />
+
+		<property value="08012487443" name="Phone" />
+
+		<property value="HIROPON" name="NickName" />
+
+		<property value="Mizuho Bank" name="txtBankName" />
+
+		<property value="meguro" name="txtBranchName" />
+
+		<property value="MHCBJPJT" name="txtSWIFTNo" />
+
+		<property value="1-7-13 mita meguro-ku tokyo" name="txtBankAddress" />
+
+		<property value="0334415131" name="txtBankPhone" />
+
+		<property value="1151740" name="txtAccountNo" />
+
+		<property value="hideo watanabe" name="txtBankHolder" />
+
+		<property value="90000014" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="90000011" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="seiichi ebata" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1949-12-13" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="ebatabrand@i.softbank.jp" name="Email" />
+
+		<property value="2610004" name="PostCode" />
+
+		<property value="1-5-1 takasu mihama-ku chiba-shi chiba-ken"
+			name="Address" />
+
+		<property value="08043493121" name="Phone" />
+
+		<property value="kikousi" name="NickName" />
+
+		<property value="Mizuho Bank" name="txtBankName" />
+
+		<property value="inage" name="txtBranchName" />
+
+		<property value="MHCBJPJT" name="txtSWIFTNo" />
+
+		<property value="2-5-1 konakadai inage-ku chiba-shi chiba-ken"
+			name="txtBankAddress" />
+
+		<property value="0432535211" name="txtBankPhone" />
+
+		<property value="2047306" name="txtAccountNo" />
+
+		<property value="seiichi ebata" name="txtBankHolder" />
+
+		<property value="90000015" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="90000011" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="kazuko kusazumi" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1964-07-25" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="dandelion@wit.ocn.ne.jp" name="Email" />
+
+		<property value="5810018" name="PostCode" />
+
+		<property value="2-10-19 akamatukata aoyamacho yaoshi osaka-fu"
+			name="Address" />
+
+		<property value="09030542210" name="Phone" />
+
+		<property value="ruru" name="NickName" />
+
+		<property value="Hong Kong and shanghai banking corporation limited (HSBC)"
+			name="txtBankName" />
+
+		<property value="Hong Kong Office" name="txtBranchName" />
+
+		<property value="HSBCHKHHHKH" name="txtSWIFTNo" />
+
+		<property
+			value="Level 6, HSBC Main Building, 1 Queen's Road Central, CentralLevel 6, HSBC Main Building, 1 Queen's Road Central, Central"
+			name="txtBankAddress" />
+
+		<property value="85222333000" name="txtBankPhone" />
+
+		<property value="102-738895-833-5" name="txtAccountNo" />
+
+		<property value="kazuko kusazumi" name="txtBankHolder" />
+
+		<property value="90000016" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="90000012" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="kumiko hata" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1954-2-7" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="kimiko162799@gmail.com" name="Email" />
+
+		<property value="1400014" name="PostCode" />
+
+		<property value="4-17-13-201 ooi oota-ku tokyo" name="Address" />
+
+		<property value="08035566279" name="Phone" />
+
+		<property value="SOYA" name="NickName" />
+
+		<property value="Mizuho Bank" name="txtBankName" />
+
+		<property value="ooimachi" name="txtBranchName" />
+
+		<property value="MHCBJPJT" name="txtSWIFTNo" />
+
+		<property value="1-6-6 ooi shinagawa-ku tokyo" name="txtBankAddress" />
+
+		<property value="0337740111" name="txtBankPhone" />
+
+		<property value="2187743" name="txtAccountNo" />
+
+		<property value="kumiko hata" name="txtBankHolder" />
+
+		<property value="90000017" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="90000012" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="jun narisawa" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1951-08-16" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="jcpro-narisawa@aroma.ocn.ne.jp" name="Email" />
+
+		<property value="1350062" name="PostCode" />
+
+		<property value="Wcomfort-Towers,room4509,1-9-31,Simomome, kouto-ku,Tokyo"
+			name="Address" />
+
+		<property value="09040539960" name="Phone" />
+
+		<property value="swan88" name="NickName" />
+
+		<property value="Bank of Tokyo-Mitsubishi UFJ" name="txtBankName" />
+
+		<property value="fukagawa" name="txtBranchName" />
+
+		<property value="BOTKJPJT" name="txtSWIFTNo" />
+
+		<property value="2-5-1 monzennakacyo kouto-ku tokyo" name="txtBankAddress" />
+
+		<property value="0336418301" name="txtBankPhone" />
+
+		<property value="4958732" name="txtAccountNo" />
+
+		<property value="JCPRO Ltd Representative Director jun narisawa"
+			name="txtBankHolder" />
+
+		<property value="90000018" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="90000012" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="keiko okada" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1941-05-03" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="kokada0503@yahoo.co.jp" name="Email" />
+
+		<property value="2340056" name="PostCode" />
+
+		<property value="142-12-706 nobacyou kounan-ku yokohama-shi kanagawa-ken"
+			name="Address" />
+
+		<property value="08033127041" name="Phone" />
+
+		<property value="meiai123" name="NickName" />
+
+		<property value="Risona Bank" name="txtBankName" />
+
+		<property value="kamiooka" name="txtBranchName" />
+
+		<property value="DIWAJPJT" name="txtSWIFTNo" />
+
+		<property value="1-14-6 kamiookanishi kounan-ku yokohama-shi kanagawa-ken"
+			name="txtBankAddress" />
+
+		<property value="0458423641" name="txtBankPhone" />
+
+		<property value="1369611" name="txtAccountNo" />
+
+		<property value="keiko okada" name="txtBankHolder" />
+
+		<property value="90000019" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="90000014" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="satoru fukasaku" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1953-07-30" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="elements7sf@gmail.com" name="Email" />
+
+		<property value="1750094" name="PostCode" />
+
+		<property value="3-9-8-108 narimasu itanashi-ku tokyo" name="Address" />
+
+		<property value="09014654314" name="Phone" />
+
+		<property value="elements7" name="NickName" />
+
+		<property value="Mizuho Bank" name="txtBankName" />
+
+		<property value="narimasu" name="txtBranchName" />
+
+		<property value="MHCBJPJT" name="txtSWIFTNo" />
+
+		<property value="2-11-2 narimasu itabashi-ku tokyo" name="txtBankAddress" />
+
+		<property value="0339305121" name="txtBankPhone" />
+
+		<property value="1007306" name="txtAccountNo" />
+
+		<property value="satoru fukasaku" name="txtBankHolder" />
+
+		<property value="90000020" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="90000014" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="naotaka watari" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1961-12-29" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="nakazou_1229@i.softbank.jp" name="Email" />
+
+		<property value="6520032" name="PostCode" />
+
+		<property value="1-10-5-1002 aratacho hyogo-ku kobe-shi hyogo-ken"
+			name="Address" />
+
+		<property value="09087904564" name="Phone" />
+
+		<property value="trf111213" name="NickName" />
+
+		<property value="Bank of Tokyo-Mitsubishi UFJ" name="txtBankName" />
+
+		<property value="hyogo" name="txtBranchName" />
+
+		<property value="BOTKJPJT" name="txtSWIFTNo" />
+
+		<property value="1-4-3 mizukidori hyougo-ku kobe-shi hyogo-ken"
+			name="txtBankAddress" />
+
+		<property value="0785765101" name="txtBankPhone" />
+
+		<property value="0700570" name="txtAccountNo" />
+
+		<property value="naotaka watari" name="txtBankHolder" />
+
+		<property value="90000021" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="90000016" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="kazuaki endo" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1964-11-05" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="kinsama_00@yahoo.co.jp" name="Email" />
+
+		<property value="1430026" name="PostCode" />
+
+		<property value="1-16-16-201 nishimagome ota-ku tokyo" name="Address" />
+
+		<property value="09033175476" name="Phone" />
+
+		<property value="kinsama" name="NickName" />
+
+		<property value="Mizuho Bank" name="txtBankName" />
+
+		<property value="hamamatsucho" name="txtBranchName" />
+
+		<property value="MHCBJPJT" name="txtSWIFTNo" />
+
+		<property value="2-4-1 hamamatsucho minato-ku tokyo" name="txtBankAddress" />
+
+		<property value="0334365011" name="txtBankPhone" />
+
+		<property value="1092597" name="txtAccountNo" />
+
+		<property value="kazuaki endo" name="txtBankHolder" />
+
+		<property value="90000022" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="90000016" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="motomasa nomura" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1941-01-16" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="nomura.motomasa@gmail.com" name="Email" />
+
+		<property value="2345200" name="PostCode" />
+
+		<property value="3-41-20 sasage kounan-ku yokohama-shi kanagawa-ken"
+			name="Address" />
+
+		<property value="0458464669" name="Phone" />
+
+		<property value="NOMUSAN" name="NickName" />
+
+		<property value="Sumitomo Mitsui Banking Corporation" name="txtBankName" />
+
+		<property value="kamioooka" name="txtBranchName" />
+
+		<property value="SMBCJPJT" name="txtSWIFTNo" />
+
+		<property value="1-15-1 kamioookanishi kounan-ku yokohama-shi kanagawa-ken"
+			name="txtBankAddress" />
+
+		<property value="0458413131" name="txtBankPhone" />
+
+		<property value="6494823" name="txtAccountNo" />
+
+		<property value="motomasa nomura" name="txtBankHolder" />
+
+		<property value="90000023" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="90000017" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+
+
+	-
+	<bean scope="singleton" class="com.sjs.golden.app.ImportAppObject"
+		id="init.import.2001">
+
+		<property value="hitomi sato" name="Name" />
+
+		<property value="japan" name="Nationality" />
+
+		<property value="1950-07-15" name="Birthday" />
+
+		<property value="male" name="Sex" />
+
+		<property value="sante6fks568sc@softbank.ne.jp" name="Email" />
+
+		<property value="2730005" name="PostCode" />
+
+		<property value="5-1-11 honcyo funabashi-shi chiba-ken" name="Address" />
+
+		<property value="09029866775" name="Phone" />
+
+		<property value="KAORU" name="NickName" />
+
+		<property value="Bank of Tokyo-Mitsubishi UFJ" name="txtBankName" />
+
+		<property value="kanda" name="txtBranchName" />
+
+		<property value="BOTKJPJT" name="txtSWIFTNo" />
+
+		<property value="2-5-1 kandaogawacyo chiyoda-ku tokyo" name="txtBankAddress" />
+
+		<property value="0332913811" name="txtBankPhone" />
+
+		<property value="5409917" name="txtAccountNo" />
+
+		<property value="hitomi sato" name="txtBankHolder" />
+
+		<property value="90000017" name="txtID" />
+
+		<property value="2001" name="txtPassword" />
+
+		<property value="90000017" name="txtAgentId" />
+
+		<property value="2001" name="txtAgentName" />
+
+	</bean>
+</beans>

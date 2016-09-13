@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- 系统登录服务 -->
+	<bean id="ajax.login" class="com.sjs.ichigo.login.LoginAjaxAction">
+		<property name="dataSourceName" value="datasource.default"></property>
+		<property name="sqlStatement"
+			value=" select * from AdminInfo Where name='#username#' and `Password`='#password#' "></property>
+	</bean>
+
+	<bean id="ajax.loginx" class="com.sjs.ichigo.login.LoginAjaxAction">
+		<property name="dataSourceName" value="datasource.default"></property>
+		<property name="sqlStatement"
+			value=" select * from AdminInfo Where name='#username#' and `Password`='#password#' "></property>
+	</bean>
+
+	<!-- 系统注销服务 -->
+	<bean id="ajax.logout" class="com.sjs.ichigo.login.LogoutAjaxAction">
+	</bean>
+
+	<!-- 会员登录 -->
+	<bean id="ajax.memlogin" class="com.sjs.ichigo.login.LoginAjaxAction">
+		<property name="dataSourceName" value="datasource.default"></property>
+		<property name="sqlStatement"
+			value=" select * from memberinfo Where UNO='#username#' and Password='#password#' "></property>
+	</bean>
+
+	<bean id="ajax.memloginout" class="com.sjs.ichigo.login.LoginAjaxAction">
+		<property name="dataSourceName" value="datasource.default"></property>
+		<property name="sqlStatement"
+			value=" select * from AdminUser Where name='#username#' and `Password`='#password#' "></property>
+	</bean>
+
+	<bean id="app.register" class="com.sjs.golden.app.service.RegisterAction">
+	</bean>
+
+	<bean id="app.login" class="com.sjs.golden.app.service.LoginAction">
+	</bean>
+
+	<bean id="app.logout" class="com.sjs.golden.app.service.LogoutAction">
+	</bean>
+
+	<bean id="app.baseaccount" class="com.sjs.golden.account.BaseAccountAction">
+	</bean>
+	
+	<bean id="app.setorder" class="com.sjs.golden.app.service.SetOrderAction">
+	</bean>
+
+	<bean id="app.paywithcoupon" class="com.sjs.golden.app.service.PayWithCouponAction">
+	</bean>
+
+	<bean id="app.setxseat" class="com.sjs.golden.app.service.SetXSeatAction">
+	</bean>
+
+	<bean id="app.addcoupons" class="com.sjs.golden.app.service.AddCouponsAction">
+	</bean>
+
+	<bean id="app.deletecoupons" class="com.sjs.golden.app.service.DeleteCouponsAction">
+	</bean>
+
+	<bean id="app.forgetpassword" class="com.sjs.golden.app.service.ForgetPasswordAction">
+	</bean>
+
+	<bean id="app.sendcoupons" class="com.sjs.golden.app.service.SendCouponsAction">
+	</bean>
+
+	<bean id="app.changesponsor" class="com.sjs.golden.app.service.ChangeSponsorAction">
+	</bean>
+
+	<bean id="app.changepassword" class="com.sjs.golden.app.service.ChangePasswordAction">
+	</bean>
+
+	<bean id="app.changegeneral" class="com.sjs.golden.app.service.ChangeGeneralAction">
+	</bean>
+
+	<bean id="app.appcouponorder" class="com.sjs.golden.app.service.AddCouponOrderAction">
+	</bean>
+
+	<bean id="app.ordergolden" class="com.sjs.golden.app.service.OrderGoldenAction">
+	</bean>
+
+	<bean id="app.updateprofile" class="com.sjs.golden.app.service.UpdateProfileAction">
+	</bean>
+
+	<bean id="app.calcleaderfee" class="com.sjs.golden.app.service.CalcLeaderFeeAction">
+	</bean>
+
+	<bean id="app.withdraw" class="com.sjs.golden.app.service.ExitGoldenAction">
+	</bean>
+
+	<bean id="app.audit" class="com.sjs.golden.app.service.AuditAction">
+	</bean>
+
+	<bean id="app.pay" class="com.sjs.golden.app.service.PayAction">
+	</bean>
+
+	<bean id="app.covertexit" class="com.sjs.golden.app.service.CovertExitGoldenAction">
+	</bean>
+	
+	<bean id="app.changemember" class="com.sjs.golden.app.service.ChangeNumberAction">
+	</bean>
+	
+	<bean id="app.xtablesplit" class="com.sjs.golden.app.service.TableSplitAction">
+	</bean>
+	
+	<bean id="app.orginzation" class="com.sjs.golden.app.service.OrgazationAction">
+	</bean>
+</beans>

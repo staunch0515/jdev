@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean id="applist.leaderlevel" class="com.sjs.ichigo.app.list.AppListFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value=" select distinct `LEVEL` as itemid,LEVEL as itemvalue from member_leaderlevel "></property>
+		<property name="sqlOrderBy" value="  order by Mix "></property>
+	</bean>
+	
+	
+	<bean id="applist.leaderlevellist" class="com.sjs.ichigo.app.list.AppListFromContext"
+		scope="singleton">
+		<property name="appList">
+			<map>
+				<entry key="LEVEL1" value="LEVEL1" />
+				<entry key="LEVEL2" value="LEVEL2" />
+				<entry key="LEVEL3" value="LEVEL3" />
+				<entry key="LEVEL4" value="LEVEL4" />
+				<entry key="LEVEL5" value="LEVEL5" />
+				<entry key="LEVEL6" value="LEVEL6" />
+				<entry key="LEVEL7" value="LEVEL7" />
+				<entry key="LEVEL8" value="LEVEL8" />
+				<entry key="LEVEL9" value="LEVEL9" />
+				<entry key="LEVEL10" value="LEVEL10" />
+				<entry key="LEVEL11" value="LEVEL11" />
+				<entry key="LEVEL12" value="LEVEL12" />
+				<entry key="LEVEL13" value="LEVEL13" />
+				<entry key="LEVEL14" value="LEVEL14" />
+			</map>
+		</property>
+	</bean>
+
+</beans>

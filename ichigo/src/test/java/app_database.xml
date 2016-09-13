@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="datasource.default" class="com.sjs.ichigo.data.dataserver.MySqlDataServer">
+	</bean>
+	
+	<bean id="datasource.connectionpool2" class="com.sjs.ichigo.data.dataserver.ConnectionPool">
+		<property name="connString"
+			value="jdbc:mysql://103.242.101.160:3306/test?characterEncoding=UTF-8&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"></property>
+		<property name="username" value="golden888db"></property>
+		<property name="password" value="golden.2014"></property>
+	</bean>
+	
+	<bean id="datasource.connectionpool" class="com.sjs.ichigo.data.dataserver.ConnectionPool">
+		<property name="connString"
+			value="jdbc:mysql://localhost:3306/golden888db?characterEncoding=UTF-8&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="password"></property>
+	</bean>
+
+	<bean id="datasource.oraclesample" class="com.sjs.ichigo.data.dataserver.MySqlDataServer"
+		scope="singleton">
+		<property name="connString"
+			value="jdbc:oracle:thin:@202.123.106.70:1521:orasalas"></property>
+		<property name="username" value="finance"></property>
+		<property name="password" value="cfc08"></property>
+	</bean>
+</beans>

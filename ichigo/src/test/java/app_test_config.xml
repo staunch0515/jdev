@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="app.test" class="com.sjs.ichigo.test.AppTestAction">
+	</bean>
+
+	<bean id="app.first" class="com.sjs.golden.app.service.FirstUserAction">
+	</bean>
+
+	<bean id="app.dbclear" class="com.sjs.golden.app.service.DBClearAction">
+	</bean>
+	
+	<bean id="app.updateleader" class="com.sjs.golden.app.service.UpdateLeaderAction">
+	</bean>
+
+	<bean id="test.data.couponsno" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value="  select CouponsNo as returnvalue from admin_coupons where SPONSORNO='#uid#' and (OrderId='' or OrderId is null)  "></property>
+		<property name="sqlOrderBy" value="  order by sortno desc  "></property>
+	</bean>
+
+	<bean id="test.data.couponspassword" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value="  select CouponsPwd as returnvalue from admin_coupons where SPONSORNO='#uid#' and (OrderId='' or OrderId is null)  "></property>
+		<property name="sqlOrderBy" value="  order by sortno desc  "></property>
+	</bean>
+
+	<!-- 测试余额 -->
+	<bean id="test.dataset.goldenformoney" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value="  select balance as returnvalue from v_accountdetail where  DELFLG=0  and Name='#uid#' "></property>
+		<property name="sqlOrderBy" value="  order by sortno desc  "></property>
+	</bean>
+
+	<!-- 测试GoldenPass -->
+	<bean id="test.dataset.canusedgoldenpass" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value="  select count(*) as returnvalue from admin_coupons where SPONSORNO='#uid#' and (OrderId='' or OrderId is null)  "></property>
+		<property name="sqlOrderBy" value="  Order by CouponsNo  "></property>
+	</bean>
+
+	<bean id="test.dataset.classlevel" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value="  select classLevel as returnvalue from v_member where name='#uid#'  "></property>
+		<property name="sqlOrderBy" value="  Order by name  "></property>
+	</bean>
+
+	<bean id="test.dataset.leaderlevel" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value="  select leaderuid as returnvalue from v_member where name='#uid#'  "></property>
+		<property name="sqlOrderBy" value="  Order by name  "></property>
+	</bean>
+
+	<bean id="test.dataset.usermemberturn" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value="  select turnno as returnvalue from v_member where name='#uid#'  "></property>
+		<property name="sqlOrderBy" value="  Order by name  "></property>
+	</bean>
+
+	<bean id="test.dataset.usermemberxseatclasslevel" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value="  select classLevel as returnvalue from v_xtable where name='#uid#'  "></property>
+		<property name="sqlOrderBy" value="  Order by name  "></property>
+	</bean>
+
+	<bean id="test.dataset.topusername" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value="  select Name as  returnvalue from v_xtable where UID=(select TOPID from v_xtable where Uid=( select LASTTABLEUID from v_member where name='#uid#' ) )  "></property>
+		<property name="sqlOrderBy" value="  "></property>
+	</bean>
+
+	<bean id="test.dataset.allnums" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value=" select ALLNums as returnvalue from v_member where name='#uid#' "></property>
+		<property name="sqlOrderBy" value="  "></property>
+	</bean>
+
+	<bean id="test.dataset.childnums" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value=" select SubNums as returnvalue from v_member where name='#uid#' "></property>
+		<property name="sqlOrderBy" value="  "></property>
+	</bean>
+
+	<bean id="test.dataset.goldennum" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value=" select Amount as returnvalue from v_drawinfo  where DELFLG=0 AND DRAWTYPE='goldennum' AND name='#uid#' "></property>
+		<property name="sqlOrderBy" value="  "></property>
+	</bean>
+
+	<bean id="test.dataset.drawcash" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value=" select Amount as returnvalue from v_drawinfo  where DELFLG=0 AND DRAWTYPE='withdraw' AND name='#uid#' "></property>
+		<property name="sqlOrderBy" value="  "></property>
+	</bean>
+	
+	<bean id="test.dataset.tablebouns" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value=" select sum(input) as returnvalue from v_accountdetail where DELFLG=0 AND Content='Table Bouns'  AND name='#uid#' "></property>
+		<property name="sqlOrderBy" value="  "></property>
+	</bean>
+	
+	<bean id="test.dataset.leaderbouns" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value=" select sum(input) as returnvalue from v_accountdetail where DELFLG=0 AND Content='Leader Bouns'  AND name='#uid#' "></property>
+		<property name="sqlOrderBy" value="  "></property>
+	</bean>
+	
+	<bean id="test.dataset.extraleaderbouns" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="prototype">
+		<property name="sqlStatement"
+			value=" select sum(input) as returnvalue from v_accountdetail where DELFLG=0 AND Content='Extra Leader Bouns'  AND name='#uid#' "></property>
+		<property name="sqlOrderBy" value="  "></property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.check.turnno" class="com.sjs.ichigo.test.DateSetCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.usermemberturn"></property>
+		<property name="checkValueType" value="string"></property>
+	</bean>
+
+	<bean id="test.check.goldenpass" class="com.sjs.ichigo.test.DateSetCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.canusedgoldenpass"></property>
+		<property name="checkValueType" value="int"></property>
+	</bean>
+
+	<bean id="test.check.canusedcouponschange" class="com.sjs.ichigo.test.ValueChangeCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.canusedgoldenpass"></property>
+		<property name="checkValueType" value="int"></property>
+	</bean>
+
+	<bean id="test.check.goldenformoney" class="com.sjs.ichigo.test.DateSetCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.goldenformoney"></property>
+		<property name="checkValueType" value="double"></property>
+	</bean>
+
+	<bean id="test.check.balance" class="com.sjs.ichigo.test.ValueChangeCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.goldenformoney"></property>
+		<property name="checkValueType" value="double"></property>
+	</bean>
+
+	<bean id="test.check.classlevel" class="com.sjs.ichigo.test.DateSetCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.classlevel"></property>
+		<property name="checkValueType" value="string"></property>
+	</bean>
+
+	<bean id="test.check.childnum" class="com.sjs.ichigo.test.DateSetCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.childnums"></property>
+		<property name="checkValueType" value="int"></property>
+	</bean>
+
+	<bean id="test.check.allnum" class="com.sjs.ichigo.test.DateSetCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.allnums"></property>
+		<property name="checkValueType" value="int"></property>
+	</bean>
+
+	<bean id="test.check.leaderlevel" class="com.sjs.ichigo.test.DateSetCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.leaderlevel"></property>
+		<property name="checkValueType" value="string"></property>
+	</bean>
+
+	<bean id="test.check.topusername" class="com.sjs.ichigo.test.DateSetCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.topusername"></property>
+		<property name="checkValueType" value="string"></property>
+	</bean>
+
+	<bean id="test.check.usermemberxseatclasslevel" class="com.sjs.ichigo.test.DateSetCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.usermemberxseatclasslevel"></property>
+		<property name="checkValueType" value="string"></property>
+	</bean>
+
+	<bean id="test.check.goldennum" class="com.sjs.ichigo.test.DateSetCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.goldennum"></property>
+		<property name="checkValueType" value="double"></property>
+	</bean>
+
+	<bean id="test.check.drawcash" class="com.sjs.ichigo.test.DateSetCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.drawcash"></property>
+		<property name="checkValueType" value="double"></property>
+	</bean>
+	
+	<bean id="test.check.tablebounschange" class="com.sjs.ichigo.test.ValueChangeCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.tablebouns"></property>
+		<property name="checkValueType" value="double"></property>
+	</bean>
+	
+	<bean id="test.check.leaderbounschange" class="com.sjs.ichigo.test.ValueChangeCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.leaderbouns"></property>
+		<property name="checkValueType" value="double"></property>
+	</bean>
+	
+	<bean id="test.check.extraleaderbounschange" class="com.sjs.ichigo.test.ValueChangeCheckAppObject"
+		scope="prototype">
+		<property name="datasetName" value="test.dataset.extraleaderbouns"></property>
+		<property name="checkValueType" value="double"></property>
+	</bean>
+	
+</beans>

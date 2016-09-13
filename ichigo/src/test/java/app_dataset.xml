@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="ajax.dataset" class="com.sjs.ichigo.ajax.DataSetAjaxAction"
+		scope="singleton">
+	</bean>
+	
+	<bean id="dataset.adminuser" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select * from v_user where find_in_set('ADMIN',UserType) "></property>
+		<property name="sqlOrderBy" value="  order by CREATETIME DESC "></property>
+	</bean>
+
+	<bean id="dataset.user" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement" value="  select * from v_user where 1=1 "></property>
+		<property name="sqlOrderBy" value="  order by CREATETIME desc  "></property>
+	</bean>
+
+	<bean id="dataset.accountlist" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement" value="  select * from v_account where DELFLG=0 "></property>
+		<property name="sqlOrderBy" value="  order by CREATETIME desc  "></property>
+	</bean>
+
+	<!-- 会员查询 -->
+	<bean id="dataset.member" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement" value="  select * from v_member where DELFLG=0 "></property>
+		<property name="sqlOrderBy" value="  order by CREATETIME desc  "></property>
+	</bean>
+
+	<!-- 会员查询 -->
+	<bean id="dataset.leader" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select * from v_member where allnums>1 "></property>
+		<property name="sqlOrderBy" value="  order by allnums desc  "></property>
+	</bean>
+
+	<bean id="dataset.leaderfee" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select * from member_leaderfee where DELFLG=0 "></property>
+		<property name="sqlOrderBy" value="  order by leaderallnums,turnno desc  "></property>
+	</bean>
+
+	<!-- 优惠券 -->
+	<bean id="dataset.coupons" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement" value="  select * from v_coupons where DELFLG=0 "></property>
+		<property name="sqlOrderBy" value="  order by CREATETIME desc  "></property>
+	</bean>
+
+	<!-- 订单处理 -->
+	<bean id="dataset.order" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement" value="  select * from v_order where DELFLG=0 "></property>
+		<property name="sqlOrderBy" value="  order by CREATETIME desc  "></property>
+	</bean>
+
+	<!-- 订单处理 -->
+	<bean id="dataset.notendxtable" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select * from v_xtable where EndTime is null "></property>
+		<property name="sqlOrderBy" value="  order by SORTID  "></property>
+	</bean>
+
+	<bean id="dataset.xseatlist" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select *,(SELECT count(m.UID) FROM member_info AS m where m.SponsorXSeatID=x.UID ) as membernums,(SELECT sum(SponsorAmount) FROM member_info AS m where m.SponsorXSeatID=x.UID ) AS SponsorAmount from v_xtable as x where 1=1 "></property>
+		<property name="sqlOrderBy" value="  order by SORTID desc  "></property>
+	</bean>
+
+	<!-- 用户账单查询 -->
+	<bean id="dataset.accountdetail" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select * from v_accountdetail   where DELFLG=0 "></property>
+		<property name="sqlOrderBy" value="  order by SortNo desc  "></property>
+	</bean>
+
+
+	<bean id="dataset.actiondetail" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select Name,NickName,if(ISNULL(CONTENT),ACCOUNTITEM,CONTENT) AS CONTENT,INPUT,OUTPUT,Balance,CREATETIME from v_accountdetail where DELFLG=0 "></property>
+		<property name="sqlOrderBy" value="  order by SortNo desc  "></property>
+	</bean>
+
+
+
+	<bean id="dataset.accountgroup" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select ACCOUNTITEM,count(UID) As NUM,sum(INPUT) as INVALUE,sum(OUTPUT) as OUTVALUE,sum(
+		(
+
+			IF (
+				isnull(`v_accountdetail`.`INPUT`),
+				0,
+				`v_accountdetail`.`INPUT`
+			) -
+			IF (
+				isnull(`v_accountdetail`.`OUTPUT`),
+				0,
+				`v_accountdetail`.`OUTPUT`
+			)
+		)
+	) AS `Balance` from v_accountdetail where 1=1 "></property>
+		<property name="sqlOrderBy" value="  group by ACCOUNTITEM  "></property>
+	</bean>
+
+	<bean id="dataset.membercoll" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select CONTENT,count(UID) As NUM,sum(INPUT) as INVALUE,sum(OUTPUT) as OUTVALUE,sum(
+		(
+
+			IF (
+				isnull(`v_accountdetail`.`INPUT`),
+				0,
+				`v_accountdetail`.`INPUT`
+			) -
+			IF (
+				isnull(`v_accountdetail`.`OUTPUT`),
+				0,
+				`v_accountdetail`.`OUTPUT`
+			)
+		)
+	) AS `Balance` from v_accountdetail where 1=1 "></property>
+		<property name="sqlOrderBy" value="  group by CONTENT  "></property>
+	</bean>
+
+	<bean id="dataset.drawcoll" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select drawtype,sum(amount) as payable,count(UID) As NUM,sum(if(ISNULL(AuditTime),0,amount)) as Audited,sum(amount-if(ISNULL(AuditTime),0,amount)) as NotAudit,sum(if(ISNULL(PayTime),0,amount)) as Payed ,sum(amount-if(ISNULL(PayTime),0,amount)) as NotPay from v_drawinfo where  DELFLG=0 "></property>
+		<property name="sqlOrderBy" value="  group by DRAWTYPE  "></property>
+	</bean>
+
+	<bean id="dataset.drawinfo" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement" value=" select * from v_drawinfo where DELFLG=0 "></property>
+		<property name="sqlOrderBy" value="  order by CreateTime desc  "></property>
+	</bean>
+	
+	<bean id="dataset.drawinfo.amountsum" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement" value=" select sum(amount) as Amount from v_drawinfo where DELFLG=0 "></property>
+		<property name="sqlOrderBy" value="  order by CreateTime desc  "></property>
+	</bean>
+
+	<!-- 用户消息查询 -->
+	<bean id="dataset.usermessage" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement" value="  select * from v_message  where DELFLG=0 "></property>
+		<property name="sqlOrderBy" value="  order by SORTID desc  "></property>
+	</bean>
+
+	<bean id="dataset.nousedcoupons" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select * from admin_coupons where DELFLG=0 AND SPONSORNO='#username#' and (OrderId='' or OrderId is null)  "></property>
+		<property name="sqlOrderBy" value="  Order by CouponsNo  "></property>
+	</bean>
+
+	<bean id="dataset.member.xseatlist" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value=" select * from member_xtable where DELFLG=0 AND MUID='#memberid#' "></property>
+		<property name="sqlOrderBy" value="  Order by SORTID  "></property>
+	</bean>
+
+	<!-- -->
+	<bean id="dataset.leader.xseatlist" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value=" select * from member_info where DELFLG=0 AND (SponsorID='#memberid#' and HightestAmount=42000 ) or (SponsorID in (select UID from member_info where SponsorID='#memberid#' ) and HightestAmount=42000) "></property>
+		<property name="sqlOrderBy" value="  Order by CreateTime  "></property>
+	</bean>
+
+	<bean id="dataset.leader.leaderlevel" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+				value=" select UID,LEVEL,StartDate,EndDate,Fee,ExtraBouns from member_leaderlevel where DELFLG=0 AND MIXNUM&lt;=#subnums# and MAXNUM&gt;=#subnums# and  StartDate&lt;='#today#' And EndDate&gt;='#today#' "></property>
+			<property name="sqlOrderBy" value="  Order by StartDate Desc "></property>
+	</bean>
+
+	<bean id="dataset.leader.checkleader" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement" value=" select Count(*) as Count from member_info as m where SponsorID='#memberid#'  "></property>
+		<property name="sqlOrderBy" value="    "></property>
+	</bean>
+
+	<!-- Member -->
+	<bean id="dataset.member.coupons" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select * from v_coupons where SPONSORNO='#loginuser.name#' "></property>
+		<property name="sqlOrderBy" value="  order by CREATETIME desc  "></property>
+	</bean>
+
+	<bean id="dataset.member.message" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select * from user_message where TOUSERID='#loginuser.uid#' "></property>
+		<property name="sqlOrderBy" value="  order by SORTID desc  "></property>
+	</bean>
+	
+	<bean id="dataset.user.accountdetail" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select * from user_accountdetail  where DELFLG=0 AND  ACCOUNTID='#accountid#'  "></property>
+		<property name="sqlOrderBy" value="  order by SortNo  desc "></property>
+	</bean>
+
+	<bean id="dataset.member.accountdetail" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select * from user_accountdetail   where DELFLG=0 AND ACCOUNTID='#loginuser.accountid#'  "></property>
+		<property name="sqlOrderBy" value="  order by SortNo  desc "></property>
+	</bean>
+
+	<bean id="dataset.member.friends" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select * from  v_member where DELFLG=0 AND SponsorNo='#loginuser.name#'  "></property>
+		<property name="sqlOrderBy" value="  order by CREATETIME desc "></property>
+	</bean>
+
+	<bean id="dataset.member.sublist" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement" value="  select * from  v_member where DELFLG=0 "></property>
+		<property name="sqlOrderBy" value="  order by CREATETIME desc "></property>
+	</bean>
+
+	<bean id="dataset.member.lasestmessage" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value="  select * from user_message where DELFLG=0 AND  TOUSERID='#loginuser.uid#'   "></property>
+		<property name="sqlOrderBy" value="  order by SORTID desc "></property>
+	</bean>
+
+	<bean id="dataset.member.getordergoldensum" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value=" select SUM(AMOUNT) as AMOUNT from user_drawinfo where USERID='#loginuser.uid#' and DRAWTYPE='goldennum'   "></property>
+		<property name="sqlOrderBy" value=" "></property>
+	</bean>
+
+	<bean id="dataset.allcoupons" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value=" select  *  from admin_coupons  where nickflg is null "></property>
+		<property name="sqlOrderBy" value="  order by SortNo "></property>
+	</bean>
+
+	<bean id="dataset.member.checksponsor" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value=" select * from v_member where (ExitGolden is NULL or LENGTH(ExitGolden)=0)  and   Name='#name#'  "></property>
+		<property name="sqlOrderBy" value="   "></property>
+	</bean>
+
+	<bean id="dataset.member.checkuser" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value=" select * from user_info where  ( Name='#nickname#'  ) or ( Nickname='#nickname#') "></property>
+		<property name="sqlOrderBy" value="   "></property>
+	</bean>
+
+	<bean id="dataset.member.gettotaltablebouns" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value=" SELECT SUM(INPUT) as Amount FROM user_accountdetail WHERE DELFLG=0 AND Content='Table Bouns' and Uid='#accountid#' "></property>
+		<property name="sqlOrderBy" value="   "></property>
+	</bean>
+	
+	<bean id="dataset.leaderlevel.leaderlevel" class="com.sjs.ichigo.data.dataset.DataSetFromSql"
+		scope="singleton">
+		<property name="sqlStatement"
+			value=" SELECT * FROM member_leaderlevel WHERE DELFLG=0  "></property>
+		<property name="sqlOrderBy" value="  Order by StartDate Desc,MIXNUM ASC "></property>
+	</bean>
+
+</beans>

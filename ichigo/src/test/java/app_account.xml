@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- 
+	
+	1   使用Coupon上桌
+	
+	 -->
+	<!-- 本部分含有两块内容： 1、系统帐户科目表和会员帐户科目表 2、记账类型： -->
+	<!-- Account -->
+	<!--  accountitem.golden888.settable accountitem.golden888.settablefee -->
+	<bean id="accountaction.realgolden" class="com.sjs.golden.account.RealGoldenAccountAction"
+		scope="singleton">
+	</bean>
+	
+	<bean id="accountaction.withdraw" class="com.sjs.golden.account.WithDrawAccountAction"
+		scope="singleton">
+	</bean>
+	
+	<bean id="accountaction.couponsorder" class="com.sjs.golden.account.CouponOrderAccountAction"
+		scope="singleton">
+	</bean>
+
+	<bean id="accountaction.bankorder" class="com.sjs.golden.account.BankOrderAccountAction"
+		scope="singleton">
+	</bean>
+
+	<bean id="accountaction.tablebouns" class="com.sjs.golden.account.TableBounsAccountAction"
+		scope="singleton">
+	</bean>
+
+	<bean id="accountaction.settable" class="com.sjs.golden.account.SetTableAccountAction"
+		scope="singleton">
+	</bean>
+
+	<bean id="accountaction.leaderbouns" class="com.sjs.golden.account.LeaderBounsAccountAction"
+		scope="singleton">
+	</bean>
+	
+	<bean id="accountaction.extrabouns" class="com.sjs.golden.account.ExtraBounsAccountAction"
+		scope="singleton">
+	</bean>
+
+	<bean id="accountaction.goldenorder" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+	</bean>
+	
+	<bean id="accountaction.leavegame" class="com.sjs.golden.account.LeaveGameAccountAction"
+		scope="singleton">
+	</bean>
+	
+	<bean id="accountaction.aloneleavetable" class="com.sjs.golden.account.AloneLeaveTableAccountAction"
+		scope="singleton">
+	</bean>
+	
+	<bean id="accountaction.drawcash" class="com.sjs.golden.account.DrawCashAccountAction"
+		scope="singleton">
+	</bean>
+	
+	<bean id="accountaction.exchangegoldenpass" class="com.sjs.golden.account.ExchangeGoldenPassAccountAction"
+		scope="singleton">
+	</bean>
+	
+	<bean id="accountaction.ordergolden" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+	</bean>
+	
+	<bean id="accountaction.accountmonthfee" class="com.sjs.golden.account.MonthFeeAccountAction"
+		scope="singleton">
+	</bean>
+	
+	<bean id="accountaction.changesponsor" class="com.sjs.golden.account.ChangeSponsorAccountAction"
+		scope="singleton">
+	</bean>
+
+	<!-- User AccountSystem Part -->
+	<bean id="accountitem.user.accountsystem" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+	</bean>
+
+	<!-- 用户全部所得  -->
+	<bean id="accountitem.user.revenue" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.accountsystem"></property>
+	</bean>
+	
+	<bean id="accountitem.user.coupons" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.revenue"></property>
+	</bean>
+	
+	<bean id="accountitem.user.moneyforgolden" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.revenue"></property>
+	</bean>
+	
+	<bean id="accountitem.user.bouns" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.revenue"></property>
+	</bean>
+
+	<bean id="accountitem.user.tablebouns" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.bouns"></property>
+	</bean>
+
+	<bean id="accountitem.user.leaderbouns" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.bouns"></property>
+	</bean>
+
+	<!-- 用户全部支出 -->
+	<bean id="accountitem.user.pay" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.accountsystem"></property>
+	</bean>
+	
+	<bean id="accountitem.user.settable" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.pay"></property>
+	</bean>
+
+	<bean id="accountitem.user.fee" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.pay"></property>
+	</bean>
+	
+	<bean id="accountitem.user.settablefee" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.fee"></property>
+	</bean>
+
+	<bean id="accountitem.user.cashfee" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.pay"></property>
+	</bean>
+	
+	<bean id="accountitem.user.goldenfee" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.fee"></property>
+	</bean>
+	
+	<!-- 用户全部结余 -->
+	<bean id="accountitem.user.balance" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.pay"></property>
+	</bean>
+
+	<!-- Golden888 AccountSystem Part -->
+	<bean id="accountitem.golden888.accountsystem" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+	</bean>
+
+	<!-- 系统全部所得  -->
+	<bean id="accountitem.golden888.revenue" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.accountsystem"></property>
+	</bean>
+	
+	<!-- 上桌费用 -->
+	<bean id="accountitem.golden888.tabledeposit" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.golden888.revenue"></property>
+	</bean>
+	
+	<bean id="accountitem.golden888.exittablefee" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.golden888.revenue"></property>
+	</bean>
+	
+	<bean id="accountitem.golden888.settablefee" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.golden888.revenue"></property>
+	</bean>
+	
+	<!-- 购买黄金手续费  -->
+	<bean id="accountitem.golden888.goldenfee" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.golden888.revenue"></property>
+	</bean>
+	
+	<!-- Coupons手续费  -->
+	<bean id="accountitem.golden888.couponsfee" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.golden888.revenue"></property>
+	</bean>
+	
+	<!-- Cash手续费  -->
+	<bean id="accountitem.golden888.cashfee" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.golden888.revenue"></property>
+	</bean>
+	
+	<bean id="accountitem.golden888.paycash" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.golden888.revenue"></property>
+	</bean>
+	
+	<!-- 系统全部支出 -->
+	<bean id="accountitem.golden888.pay" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.user.accountsystem"></property>
+	</bean>
+	
+	<bean id="accountitem.golden888.tablebonus" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.golden888.pay"></property>
+	</bean>
+	
+	<bean id="accountitem.golden888.sponsorbonus" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.golden888.pay"></property>
+	</bean>
+	
+	<!-- 系统全部结余 -->
+	<bean id="accountitem.golden888.balance" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.golden888.balance"></property>
+	</bean>
+	
+	<bean id="accountitem.golden888.profit" class="com.sjs.golden.account.GoldenOrderAccountAction"
+		scope="singleton">
+		<property name="topaccountitem" value="accountitem.golden888.balance"></property>
+	</bean>
+	
+	<bean id="accountitem.golden888.base" class="com.sjs.golden.account.BaseAccountAction"
+		scope="singleton">
+	</bean>
+	
+</beans>

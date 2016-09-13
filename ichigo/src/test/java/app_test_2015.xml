@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- 初始化系统  -->
+	<bean id="test.201501.dbclear" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.dbclear"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="clear" value="true" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 初始化系统  -->
+	<bean id="test.201501.first" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.first"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="clear" value="true" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.201501.t10000.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000001" />
+				<entry key="nickname" value="t10000" />
+				<entry key="username" value="t10000" />
+				<entry key="givenname" value="t10000" />
+				<entry key="surnname" value="t10000" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.201501.t10000.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="t10000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="t10000" />
+				<entry key="quantity" value="10" />
+				<entry key="startdate" value="2014-08-01" />
+				<entry key="enddate" value="2015-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="test.task.addcoupons" value="t10000" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="test.201501.t10000.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="t10000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="test.task.goldenpass001" value="t10000"/>
+				<entry key="test.task.settable003" value="t10000" />
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 上家在ClassLevel2  上位有空位 -->
+	<bean id="test.201501.a888001.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="161017447" />
+				<entry key="nickname" value="a888001" />
+				<entry key="username" value="a888001" />
+				<entry key="givenname" value="a888001" />
+				<entry key="surnname" value="a888001" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.201501.a888001.getcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.sendcoupons"></property>
+		<property name="loginId" value="t10000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="a888001" />
+				<entry key="quantity" value="1" />
+				<entry key="flg" value="0" />
+				<entry key="couponlist:test.data.couponsno" value="t10000" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="test.task.addcoupons" value="a888001" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="test.201501.a888001.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="a888001"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="COUPONS" />
+				<entry key="couponsno:test.data.couponsno" value="a888001"/>
+				<entry key="couponspassword:test.data.couponspassword" value="a888001"/>
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="test.task.goldenpass001" value="a888001"/>
+				<entry key="test.task.settable001" value="a888001" />
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 上家在ClassLevel2  并且上位没有有空位  -->
+	<bean id="test.201501.a888002.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="161017447" />
+				<entry key="nickname" value="a888002" />
+				<entry key="username" value="a888002" />
+				<entry key="givenname" value="a888002" />
+				<entry key="surnname" value="a888002" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+	
+		<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.201501.a888002.getcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.sendcoupons"></property>
+		<property name="loginId" value="t10000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="a888002" />
+				<entry key="quantity" value="1" />
+				<entry key="flg" value="0" />
+				<entry key="couponlist:test.data.couponsno" value="t10000" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="test.task.addcoupons" value="a888002" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="test.201501.a888002.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="a888002"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="COUPONS" />
+				<entry key="couponsno:test.data.couponsno" value="a888002"/>
+				<entry key="couponspassword:test.data.couponspassword" value="a888002"/>
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="test.task.goldenpass002" value="a888002"/>
+				<entry key="test.task.settable002" value="a888002" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="test.201501.a888003.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="161017447" />
+				<entry key="nickname" value="a888003" />
+				<entry key="username" value="a888003" />
+				<entry key="givenname" value="a888003" />
+				<entry key="surnname" value="a888003" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.201501.a888003.getcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.sendcoupons"></property>
+		<property name="loginId" value="t10000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="a888003" />
+				<entry key="quantity" value="1" />
+				<entry key="flg" value="0" />
+				<entry key="couponlist:test.data.couponsno" value="t10000" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="test.task.addcoupons" value="a888003" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="test.201501.a888003.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="a888003"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="COUPONS" />
+				<entry key="couponsno:test.data.couponsno" value="a888003"/>
+				<entry key="couponspassword:test.data.couponspassword" value="a888003"/>
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="test.task.goldenpass002" value="a888003"/>
+				<entry key="test.task.settable002" value="a888003" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="test.201501.a888004.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="161017447" />
+				<entry key="nickname" value="a888004" />
+				<entry key="username" value="a888004" />
+				<entry key="givenname" value="a888004" />
+				<entry key="surnname" value="a888004" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.201501.a888004.getcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.sendcoupons"></property>
+		<property name="loginId" value="t10000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="a888004" />
+				<entry key="quantity" value="1" />
+				<entry key="flg" value="0" />
+				<entry key="couponlist:test.data.couponsno" value="t10000" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="test.task.addcoupons" value="a888004" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="test.201501.a888004.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="a888004"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="COUPONS" />
+				<entry key="couponsno:test.data.couponsno" value="a888004"/>
+				<entry key="couponspassword:test.data.couponspassword" value="a888004"/>
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="test.task.goldenpass002" value="a888004"/>
+				<entry key="test.task.settable002" value="a888004" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="test.201501.a888005.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="161017447" />
+				<entry key="nickname" value="a888005" />
+				<entry key="username" value="a888005" />
+				<entry key="givenname" value="a888005" />
+				<entry key="surnname" value="a888005" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.201501.a888005.getcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.sendcoupons"></property>
+		<property name="loginId" value="t10000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="a888005" />
+				<entry key="quantity" value="1" />
+				<entry key="flg" value="0" />
+				<entry key="couponlist:test.data.couponsno" value="t10000" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="test.task.addcoupons" value="a888005" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="test.201501.a888005.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="singleton">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="a888005"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="COUPONS" />
+				<entry key="couponsno:test.data.couponsno" value="a888005"/>
+				<entry key="couponspassword:test.data.couponspassword" value="a888005"/>
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="test.task.goldenpass002" value="a888005"/>
+				<entry key="test.task.settable002" value="a888005" />
+			</map>
+		</property>
+	</bean>
+</beans>

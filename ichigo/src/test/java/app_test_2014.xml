@@ -1,0 +1,1586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- 初始化系统 -->
+	<bean id="test.2014.A00001.dbclear" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.dbclear"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="clear" value="true" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 初始化系统  -->
+	<bean id="test.2014.A00002.first" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.first"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="clear" value="true" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="2" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="0" />
+				<entry key="8000001:allnum" value="0" />
+				<entry key="8000001:leaderlevel" value="" />
+				<entry key="8000001:topusername" value="" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="test.2014.800002.A000002.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000001" />
+				<entry key="nickname" value="8000002" />
+				<entry key="username" value="8000002" />
+				<entry key="givenname" value="8000002" />
+				<entry key="surnname" value="8000002" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="txtBankName" value="HSBC" />
+				<entry key="txtBranchName" value="TSIM SHA TSUI CVC" />
+				<entry key="txtSWIFTNo" value="HSBCHKHHHKH" />
+				<entry key="txtBankAddress" value="82-84,Nathan Road,Tsim Sha TSUI,Kowloon,HONG KONG" />
+				<entry key="txtBankPhone" value="+85227488333" />
+				<entry key="txtAccountNo" value="817589435838" />
+				<entry key="txtBankHolder" value="KLF HONGKONG LIMITED" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00004.8000002.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000002" />
+				<entry key="quantity" value="20" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000002:goldenpass" value="20" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="test.2014.A00005.8000002.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000002"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<!-- 8000001 -->
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="2" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="1" />
+				<entry key="8000001:allnum" value="1" />
+				<entry key="8000001:leaderlevel" value="" />
+				<entry key="8000001:topusername" value="" />
+				<!-- 8000002 -->
+				<entry key="8000002:goldenpass" value="19" />
+				<entry key="8000002:balance" value="0" />
+				<entry key="8000002:classlevel" value="1" />
+				<entry key="8000002:turnno" value="1" />
+				<entry key="8000002:childnum" value="0" />
+				<entry key="8000002:allnum" value="0" />
+				<entry key="8000001:leaderlevel" value="" />
+				<entry key="8000002:topusername" value="8000001" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00006.8000003.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000001" />
+				<entry key="nickname" value="8000003" />
+				<entry key="username" value="8000003" />
+				<entry key="givenname" value="8000003" />
+				<entry key="surnname" value="8000003" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="txtBankName" value="HSBC" />
+				<entry key="txtBranchName" value="TSIM SHA TSUI CVC" />
+				<entry key="txtSWIFTNo" value="HSBCHKHHHKH" />
+				<entry key="txtBankAddress" value="82-84,Nathan Road,Tsim Sha TSUI,Kowloon,HONG KONG" />
+				<entry key="txtBankPhone" value="+85227488333" />
+				<entry key="txtAccountNo" value="817589435838" />
+				<entry key="txtBankHolder" value="KLF HONGKONG LIMITED" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00007.8000003.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000003" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="test.2014.A00008.8000003.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000003"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<!-- 8000001 -->
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="27.9" />
+				<entry key="8000001:classlevel" value="3" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="2" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<!-- 8000002 -->
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="0" />
+				<entry key="8000003:classlevel" value="2" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="0" />
+				<entry key="8000003:allnum" value="0" />
+				<entry key="8000003:leaderlevel" value="" />
+				<entry key="8000003:topusername" value="8000001" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00009.8000004.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000003" />
+				<entry key="nickname" value="8000004" />
+				<entry key="username" value="8000004" />
+				<entry key="givenname" value="8000004" />
+				<entry key="surnname" value="8000004" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="txtBankName" value="HSBC" />
+				<entry key="txtBranchName" value="TSIM SHA TSUI" />
+				<entry key="txtSWIFTNo" value="HSBCHKHHHKH" />
+				<entry key="txtBankAddress" value="82-84,Nathan Road,Tsim Sha Tsui,Koowloon,Hong Kong" />
+				<entry key="txtBankPhone" value="+85227488333" />
+				<entry key="txtAccountNo" value="10889046833" />
+				<entry key="txtBankHolder" value="SHIROISHI KIYOKO" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00010.8000004.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000004" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000004:goldenpass" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="test.2014.A00011.8000004.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000004"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<!-- 8000001 -->
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="27.9" />
+				<entry key="8000001:classlevel" value="3" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="3" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<!-- 8000003 -->
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="0" />
+				<entry key="8000003:classlevel" value="2" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="1" />
+				<entry key="8000003:allnum" value="1" />
+				<entry key="8000003:leaderlevel" value="" />
+				<entry key="8000003:topusername" value="8000001" />
+				<!-- 8000004 -->
+				<entry key="8000004:goldenpass" value="0" />
+				<entry key="8000004:balance" value="0" />
+				<entry key="8000004:classlevel" value="1" />
+				<entry key="8000004:turnno" value="1" />
+				<entry key="8000004:childnum" value="0" />
+				<entry key="8000004:allnum" value="0" />
+				<entry key="8000004:leaderlevel" value="" />
+				<entry key="8000004:topusername" value="8000003" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00012.8000005.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000003" />
+				<entry key="nickname" value="8000005" />
+				<entry key="username" value="8000005" />
+				<entry key="givenname" value="8000005" />
+				<entry key="surnname" value="8000005" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00013.8000005.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000005" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000005:goldenpass" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00014.8000005.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000005"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="3" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="4" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="27.9" />
+				<entry key="8000003:classlevel" value="2" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="2" />
+				<entry key="8000003:allnum" value="2" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="8000001" />
+				<entry key="8000005:goldenpass" value="0" />
+				<entry key="8000005:balance" value="0" />
+				<entry key="8000005:classlevel" value="1" />
+				<entry key="8000005:turnno" value="1" />
+				<entry key="8000005:childnum" value="0" />
+				<entry key="8000005:allnum" value="0" />
+				<entry key="8000005:leaderlevel" value="" />
+				<entry key="8000005:topusername" value="8000003" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00015.8000006.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000003" />
+				<entry key="nickname" value="8000006" />
+				<entry key="username" value="8000006" />
+				<entry key="givenname" value="8000006" />
+				<entry key="surnname" value="8000006" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00016.8000006.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000006" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000006:goldenpass" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00017.8000006.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000006"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="3" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="5" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="27.9" />
+				<entry key="8000003:classlevel" value="2" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="3" />
+				<entry key="8000003:allnum" value="3" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="8000001" />
+				<entry key="8000006:goldenpass" value="0" />
+				<entry key="8000006:balance" value="0" />
+				<entry key="8000006:classlevel" value="1" />
+				<entry key="8000006:turnno" value="1" />
+				<entry key="8000006:childnum" value="0" />
+				<entry key="8000006:allnum" value="0" />
+				<entry key="8000006:leaderlevel" value="" />
+				<entry key="8000006:topusername" value="8000002" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00018.8000004.withdraw" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.withdraw"></property>
+		<property name="loginId" value="8000004"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="3" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="5" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="0" />
+				<entry key="8000003:classlevel" value="2" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="2" />
+				<entry key="8000003:allnum" value="3" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="8000001" />
+				<entry key="8000004:goldenpass" value="0" />
+				<entry key="8000004:balance" value="0" />
+				<entry key="8000004:classlevel" value="5" />
+				<entry key="8000004:turnno" value="1" />
+				<entry key="8000004:childnum" value="0" />
+				<entry key="8000004:allnum" value="0" />
+				<entry key="8000004:leaderlevel" value="" />
+				<entry key="8000004:topusername" value="" />
+				<entry key="8000004:goldennum" value="1" />
+				<entry key="8000004:drawcash" value="420" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00019.8000007.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000003" />
+				<entry key="nickname" value="8000007" />
+				<entry key="username" value="8000007" />
+				<entry key="givenname" value="8000007" />
+				<entry key="surnname" value="8000007" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00020.8000007.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000007" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000007:goldenpass" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00021.8000007.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000007"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="3" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="6" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="27.9" />
+				<entry key="8000003:classlevel" value="2" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="3" />
+				<entry key="8000003:allnum" value="4" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="8000001" />
+				<entry key="8000007:goldenpass" value="0" />
+				<entry key="8000007:balance" value="0" />
+				<entry key="8000007:classlevel" value="1" />
+				<entry key="8000007:turnno" value="1" />
+				<entry key="8000007:childnum" value="0" />
+				<entry key="8000007:allnum" value="0" />
+				<entry key="8000007:leaderlevel" value="" />
+				<entry key="8000007:topusername" value="8000003" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00022.8000008.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000003" />
+				<entry key="nickname" value="8000008" />
+				<entry key="username" value="8000008" />
+				<entry key="givenname" value="8000008" />
+				<entry key="surnname" value="8000008" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00023.8000008.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000008" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000008:goldenpass" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00024.8000008.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000008"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="4" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="7" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="27.9" />
+				<entry key="8000003:classlevel" value="3" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="4" />
+				<entry key="8000003:allnum" value="5" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="8000001" />
+				<entry key="8000008:goldenpass" value="0" />
+				<entry key="8000008:balance" value="0" />
+				<entry key="8000008:classlevel" value="2" />
+				<entry key="8000008:turnno" value="1" />
+				<entry key="8000008:childnum" value="0" />
+				<entry key="8000008:allnum" value="0" />
+				<entry key="8000008:leaderlevel" value="" />
+				<entry key="8000008:topusername" value="8000002" />
+			</map>
+		</property>
+	</bean>
+
+
+	<!-- -->
+	<bean id="test.2014.A00025.8000009.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000008" />
+				<entry key="nickname" value="8000009" />
+				<entry key="username" value="8000009" />
+				<entry key="givenname" value="8000009" />
+				<entry key="surnname" value="8000009" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00026.8000009.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000009" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000009:goldenpass" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00027.8000009.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000009"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="4" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="8" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="27.9" />
+				<entry key="8000003:classlevel" value="3" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="4" />
+				<entry key="8000003:allnum" value="6" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="8000001" />
+				<entry key="8000009:goldenpass" value="0" />
+				<entry key="8000009:balance" value="0" />
+				<entry key="8000009:classlevel" value="1" />
+				<entry key="8000009:turnno" value="1" />
+				<entry key="8000009:childnum" value="0" />
+				<entry key="8000009:allnum" value="0" />
+				<entry key="8000009:leaderlevel" value="" />
+				<entry key="8000009:topusername" value="8000008" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00028.8000010.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000008" />
+				<entry key="nickname" value="8000010" />
+				<entry key="username" value="8000010" />
+				<entry key="givenname" value="8000010" />
+				<entry key="surnname" value="8000010" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00029.8000010.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000010" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000010:goldenpass" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00030.8000010.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000010"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="4" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="9" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="27.9" />
+				<entry key="8000003:classlevel" value="3" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="4" />
+				<entry key="8000003:allnum" value="7" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="8000001" />
+				<entry key="8000003:tablebounschange" value="0" />
+				<entry key="8000003:leaderbounschange" value="0" />
+				<entry key="8000003:extraleaderbounschange" value="0" />
+				<entry key="8000010:goldenpass" value="0" />
+				<entry key="8000010:balance" value="0" />
+				<entry key="8000010:classlevel" value="1" />
+				<entry key="8000010:turnno" value="1" />
+				<entry key="8000010:childnum" value="0" />
+				<entry key="8000010:allnum" value="0" />
+				<entry key="8000010:leaderlevel" value="" />
+				<entry key="8000010:topusername" value="8000008" />
+			</map>
+		</property>
+	</bean>
+
+
+	<!-- -->
+	<bean id="test.2014.A00031.8000011.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000005" />
+				<entry key="nickname" value="8000011" />
+				<entry key="username" value="8000011" />
+				<entry key="givenname" value="8000011" />
+				<entry key="surnname" value="8000011" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00032.8000011.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000011" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000011:goldenpass" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00033.8000011.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000011"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="4" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="11" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="27.9" />
+				<entry key="8000003:classlevel" value="3" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="4" />
+				<entry key="8000003:allnum" value="8" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="8000001" />
+				<entry key="8000003:tablebounschange" value="0" />
+				<entry key="8000003:leaderbounschange" value="0" />
+				<entry key="8000003:extraleaderbounschange" value="0" />
+				<entry key="8000005:goldenpass" value="0" />
+				<entry key="8000005:balance" value="0" />
+				<entry key="8000005:classlevel" value="2" />
+				<entry key="8000005:turnno" value="1" />
+				<entry key="8000005:childnum" value="1" />
+				<entry key="8000005:allnum" value="1" />
+				<entry key="8000005:leaderlevel" value="" />
+				<entry key="8000005:topusername" value="8000003" />
+				<entry key="8000011:goldenpass" value="0" />
+				<entry key="8000011:balance" value="0" />
+				<entry key="8000011:classlevel" value="2" />
+				<entry key="8000011:turnno" value="1" />
+				<entry key="8000011:childnum" value="0" />
+				<entry key="8000011:allnum" value="0" />
+				<entry key="8000011:leaderlevel" value="" />
+				<entry key="8000011:topusername" value="8000005" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00034.8000012.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000005" />
+				<entry key="nickname" value="8000012" />
+				<entry key="username" value="8000012" />
+				<entry key="givenname" value="8000012" />
+				<entry key="surnname" value="8000012" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00035.8000012.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000012" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000012:goldenpass" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00036.8000012.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000012"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="4" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="11" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="27.9" />
+				<entry key="8000003:classlevel" value="3" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="4" />
+				<entry key="8000003:allnum" value="9" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="8000001" />
+				<entry key="8000003:tablebounschange" value="0" />
+				<entry key="8000003:leaderbounschange" value="0" />
+				<entry key="8000003:extraleaderbounschange" value="0" />
+				<entry key="8000005:goldenpass" value="0" />
+				<entry key="8000005:balance" value="0" />
+				<entry key="8000005:classlevel" value="2" />
+				<entry key="8000005:turnno" value="1" />
+				<entry key="8000005:childnum" value="2" />
+				<entry key="8000005:allnum" value="2" />
+				<entry key="8000005:leaderlevel" value="" />
+				<entry key="8000005:topusername" value="8000003" />
+				<entry key="8000012:goldenpass" value="0" />
+				<entry key="8000012:balance" value="0" />
+				<entry key="8000012:classlevel" value="1" />
+				<entry key="8000012:turnno" value="1" />
+				<entry key="8000012:childnum" value="0" />
+				<entry key="8000012:allnum" value="0" />
+				<entry key="8000012:leaderlevel" value="" />
+				<entry key="8000012:topusername" value="8000005" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00037.8000013.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000009" />
+				<entry key="nickname" value="8000013" />
+				<entry key="username" value="8000013" />
+				<entry key="givenname" value="8000013" />
+				<entry key="surnname" value="8000013" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00035.8000013.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000013" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000013:goldenpass" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00036.8000013.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000013"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="4" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="7" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="27.9" />
+				<entry key="8000003:classlevel" value="3" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="5" />
+				<entry key="8000003:allnum" value="5" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="8000001" />
+				<entry key="8000009:goldenpass" value="0" />
+				<entry key="8000009:balance" value="0" />
+				<entry key="8000009:classlevel" value="2" />
+				<entry key="8000009:turnno" value="1" />
+				<entry key="8000009:childnum" value="0" />
+				<entry key="8000009:allnum" value="0" />
+				<entry key="8000009:leaderlevel" value="" />
+				<entry key="8000009:topusername" value="8000008" />
+				<entry key="8000013:goldenpass" value="0" />
+				<entry key="8000013:balance" value="0" />
+				<entry key="8000013:classlevel" value="2" />
+				<entry key="8000013:turnno" value="1" />
+				<entry key="8000013:childnum" value="0" />
+				<entry key="8000013:allnum" value="0" />
+				<entry key="8000013:leaderlevel" value="" />
+				<entry key="8000013:topusername" value="8000008" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00037.8000014.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000009" />
+				<entry key="nickname" value="8000014" />
+				<entry key="username" value="8000014" />
+				<entry key="givenname" value="8000014" />
+				<entry key="surnname" value="8000014" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00035.8000014.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000014" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000014:goldenpass" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00036.8000014.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000014"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="4" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="7" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="27.9" />
+				<entry key="8000003:classlevel" value="3" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="5" />
+				<entry key="8000003:allnum" value="5" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="8000001" />
+				<entry key="8000009:goldenpass" value="0" />
+				<entry key="8000009:balance" value="0" />
+				<entry key="8000009:classlevel" value="2" />
+				<entry key="8000009:turnno" value="1" />
+				<entry key="8000009:childnum" value="0" />
+				<entry key="8000009:allnum" value="0" />
+				<entry key="8000009:leaderlevel" value="" />
+				<entry key="8000009:topusername" value="8000008" />
+				<entry key="8000014:goldenpass" value="0" />
+				<entry key="8000014:balance" value="0" />
+				<entry key="8000014:classlevel" value="2" />
+				<entry key="8000014:turnno" value="1" />
+				<entry key="8000014:childnum" value="0" />
+				<entry key="8000014:allnum" value="0" />
+				<entry key="8000014:leaderlevel" value="" />
+				<entry key="8000014:topusername" value="8000008" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00018.8000014.withdraw" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.withdraw"></property>
+		<property name="loginId" value="8000014"></property>
+		<property name="contextMap">
+			<map>
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="3" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="5" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="0" />
+				<entry key="8000003:classlevel" value="2" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="3" />
+				<entry key="8000003:allnum" value="3" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="8000001" />
+				<entry key="8000009:goldenpass" value="0" />
+				<entry key="8000009:balance" value="0" />
+				<entry key="8000009:classlevel" value="2" />
+				<entry key="8000009:turnno" value="1" />
+				<entry key="8000009:childnum" value="0" />
+				<entry key="8000009:allnum" value="0" />
+				<entry key="8000009:leaderlevel" value="" />
+				<entry key="8000009:topusername" value="8000008" />
+				<entry key="8000014:goldenpass" value="0" />
+				<entry key="8000014:balance" value="0" />
+				<entry key="8000014:classlevel" value="5" />
+				<entry key="8000014:turnno" value="1" />
+				<entry key="8000014:childnum" value="0" />
+				<entry key="8000014:allnum" value="0" />
+				<entry key="8000014:leaderlevel" value="" />
+				<entry key="8000014:topusername" value="" />
+				<entry key="8000014:goldennum" value="1" />
+				<entry key="8000014:drawcash" value="420" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A000351.8000014.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000014" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000014:goldenpass" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A000361.8000014.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000014"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="4" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="14" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<entry key="8000001:tablebounschange" value="4650" />
+				<entry key="8000001:leaderbounschange" value="30" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="0" />
+				<entry key="8000003:classlevel" value="3" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="5" />
+				<entry key="8000003:allnum" value="12" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="8000001" />
+				<entry key="8000009:goldenpass" value="0" />
+				<entry key="8000009:balance" value="27.9" />
+				<entry key="8000009:classlevel" value="2" />
+				<entry key="8000009:turnno" value="1" />
+				<entry key="8000009:childnum" value="3" />
+				<entry key="8000009:allnum" value="3" />
+				<entry key="8000009:leaderlevel" value="LEVEL1" />
+				<entry key="8000009:topusername" value="8000008" />
+				<entry key="8000014:goldenpass" value="0" />
+				<entry key="8000014:balance" value="0" />
+				<entry key="8000014:classlevel" value="1" />
+				<entry key="8000014:turnno" value="1" />
+				<entry key="8000014:childnum" value="0" />
+				<entry key="8000014:allnum" value="0" />
+				<entry key="8000014:leaderlevel" value="" />
+				<entry key="8000014:topusername" value="8000007	" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00037.8000015.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000009" />
+				<entry key="nickname" value="8000015" />
+				<entry key="username" value="8000015" />
+				<entry key="givenname" value="8000015" />
+				<entry key="surnname" value="8000015" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00035.8000015.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000015" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000015:goldenpass" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00036.8000015.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000015"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="4" />
+				<entry key="8000001:turnno" value="1" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="14" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="" />
+				<entry key="8000001:tablebounschange" value="4650" />
+				<entry key="8000001:leaderbounschange" value="30" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="0" />
+				<entry key="8000003:classlevel" value="3" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="5" />
+				<entry key="8000003:allnum" value="12" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="8000001" />
+				<entry key="8000009:goldenpass" value="0" />
+				<entry key="8000009:balance" value="27.9" />
+				<entry key="8000009:classlevel" value="2" />
+				<entry key="8000009:turnno" value="1" />
+				<entry key="8000009:childnum" value="3" />
+				<entry key="8000009:allnum" value="3" />
+				<entry key="8000009:leaderlevel" value="LEVEL1" />
+				<entry key="8000009:topusername" value="8000008" />
+				<entry key="8000015:goldenpass" value="0" />
+				<entry key="8000015:balance" value="0" />
+				<entry key="8000015:classlevel" value="1" />
+				<entry key="8000015:turnno" value="1" />
+				<entry key="8000015:childnum" value="0" />
+				<entry key="8000015:allnum" value="0" />
+				<entry key="8000015:leaderlevel" value="" />
+				<entry key="8000015:topusername" value="8000007	" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00037.8000016.register" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.register"></property>
+		<property name="loginId" value=""></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sponsoruid" value="8000009" />
+				<entry key="nickname" value="8000016" />
+				<entry key="username" value="8000016" />
+				<entry key="givenname" value="8000016" />
+				<entry key="surnname" value="8000016" />
+				<entry key="gender" value="male" />
+				<entry key="country" value="hongkong" />
+				<entry key="birthday" value="2001-01-01" />
+				<entry key="email" value="t10000@126.com" />
+				<entry key="telephone" value="08064018866" />
+				<entry key="password" value="0efa0d11690db085fa337184a264a9ea" />
+				<entry key="password2" value="0efa0d11690db085fa337184a264a9ea" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 给 t10000增加GoldenPass -->
+	<bean id="test.2014.A00035.8000016.addcoupons" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.addcoupons"></property>
+		<property name="loginId" value="8000000"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="sendto" value="8000016" />
+				<entry key="quantity" value="1" />
+				<entry key="startdate" value="2015-07-01" />
+				<entry key="enddate" value="2016-01-01" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000016:goldenpass" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- -->
+	<bean id="test.2014.A00036.8000016.paywithcoupon" class="com.sjs.ichigo.test.TestActiveAppObject"
+		scope="prototype">
+		<property name="serviceName" value="app.paywithcoupon"></property>
+		<property name="loginId" value="8000016"></property>
+		<property name="contextMap">
+			<map>
+				<entry key="payType" value="SELFCOUPONS" />
+			</map>
+		</property>
+		<property name="checkMap">
+			<map>
+				<entry key="8000001:goldenpass" value="0" />
+				<entry key="8000001:balance" value="0" />
+				<entry key="8000001:classlevel" value="4" />
+				<entry key="8000001:turnno" value="2" />
+				<entry key="8000001:childnum" value="2" />
+				<entry key="8000001:allnum" value="15" />
+				<entry key="8000001:leaderlevel" value="LEVEL1" />
+				<entry key="8000001:topusername" value="8000013" />
+				<entry key="8000001:tablebounschange" value="3720" />
+				<entry key="8000001:leaderbounschange" value="30" />
+				<entry key="8000002:classlevel" value="4" />
+				<entry key="8000002:topusername" value="" />
+				<entry key="8000002:balance" value="1000" />
+				<entry key="8000003:goldenpass" value="0" />
+				<entry key="8000003:balance" value="27.9" />
+				<entry key="8000003:classlevel" value="4" />
+				<entry key="8000003:turnno" value="1" />
+				<entry key="8000003:childnum" value="5" />
+				<entry key="8000003:allnum" value="5" />
+				<entry key="8000003:leaderlevel" value="LEVEL1" />
+				<entry key="8000003:topusername" value="" />
+				<entry key="8000003:extraleaderbouns" value="2.5" />
+				<entry key="8000009:goldenpass" value="0" />
+				<entry key="8000009:balance" value="27.9" />
+				<entry key="8000009:classlevel" value="2" />
+				<entry key="8000009:turnno" value="1" />
+				<entry key="8000009:childnum" value="4" />
+				<entry key="8000009:allnum" value="4" />
+				<entry key="8000009:leaderlevel" value="LEVEL1" />
+				<entry key="8000009:topusername" value="8000008" />
+				<entry key="8000009:extraleaderbouns" value="2.5" />
+				<entry key="8000016:goldenpass" value="0" />
+				<entry key="8000016:balance" value="0" />
+				<entry key="8000016:classlevel" value="2" />
+				<entry key="8000016:turnno" value="1" />
+				<entry key="8000016:childnum" value="0" />
+				<entry key="8000016:allnum" value="0" />
+				<entry key="8000016:leaderlevel" value="" />
+				<entry key="8000016:topusername" value="8000007" />
+			</map>
+		</property>
+	</bean>
+</beans>

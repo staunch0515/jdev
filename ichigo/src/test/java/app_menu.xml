@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- PUBLIC -->
+	<bean id="admin.system.main" class="com.sjs.ichigo.view.DirectViewPage"
+		scope="singleton">
+		<property name="viewTitle" value="Welcome"></property>
+		<property name="jspPage" value="/adminx/system/main.jsp"></property>
+	</bean>
+	
+	<!-- 2014-10-06 Add Start  -->
+	<bean id="admin.system.index" class="com.sjs.ichigo.view.DirectViewPage"
+		scope="singleton">
+		<property name="viewTitle" value="Welcome"></property>
+		<property name="jspPage" value="/adminx/system/index.jsp"></property>
+	</bean>
+	<!-- 2014-10-06 Add End -->
+	
+	<bean id="ajax.treemenu" class="com.sjs.ichigo.ajax.TreeMenuAjaxAction"
+		scope="singleton">
+	</bean>
+	
+	
+	<!-- 系统菜单内容 -->
+	<bean id="admin.member" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="root"></property>
+		<property name="viewTitle" value="基本管理"></property>
+	</bean>
+	
+	<bean id="admin.unit" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="root"></property>
+		<property name="viewTitle" value="UNIT管理"></property>
+	</bean>
+	
+	<bean id="admin.leader" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="root"></property>
+		<property name="viewTitle" value="リーダー管理"></property>
+	</bean>
+	
+	<bean id="admin.payment" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="root"></property>
+		<property name="viewTitle" value="全体収支管理"></property>
+	</bean>
+	
+	<bean id="admin.system" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="root"></property>
+		<property name="viewTitle" value="システム管理"></property>
+	</bean>
+	
+	<!-- admin.member -->
+	<bean id="admin.member.neworder" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.member"></property>
+		<property name="viewTitle"	 value="登録申請処理"></property>
+		<property name="jspPage" value="/adminx/order/setorder.jsp"></property>
+	</bean>
+	
+	<bean id="admin.member.memberlist" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.member"></property>
+		<property name="viewTitle"	 value="会員情報明細"></property>
+		<property name="jspPage" value="/adminx/member/memberlist.jsp"></property>
+	</bean>
+	
+	<bean id="admin.member.income" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.member"></property>
+		<property name="viewTitle"	 value="会社記帳"></property>
+		<property name="jspPage" value="/adminx/account/accountgroup.jsp"></property>
+	</bean>
+	
+	<bean id="admin.member.membercoll" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.member"></property>
+		<property name="viewTitle"	 value="会員記帳"></property>
+		<property name="jspPage" value="/adminx/account/membercoll.jsp"></property>
+	</bean>
+	
+	<bean id="admin.member.inoutdetail" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.member"></property>
+		<property name="viewTitle"	 value="会員別収支明細"></property>
+		<property name="jspPage" value="/adminx/account/accountdetail.jsp"></property>
+	</bean>
+	
+	<bean id="admin.member.messagelist" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.member"></property>
+		<property name="viewTitle"	 value="メッセージ検索"></property>
+		<property name="jspPage" value="/adminx/user/messagelist.jsp"></property>
+	</bean>
+	
+	<bean id="admin.member.coupons" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.member"></property>
+		<property name="viewTitle" value="クーポン管理"></property>
+		<property name="jspPage" value="/adminx/member/couponslist.jsp"></property>
+	</bean>
+	
+	<bean id="admin.unit.xseatlist" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.unit"></property>
+		<property name="viewTitle"	 value="XSeatList"></property>
+		<property name="jspPage" value="/adminx/unit/xseatlist.jsp"></property>
+	</bean>
+	
+	<bean id="admin.unit.xtablelist" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.unit"></property>
+		<property name="viewTitle"	 value="XTableList"></property>
+		<property name="jspPage" value="/adminx/unit/xtablelist.jsp"></property>
+	</bean>
+	
+	<!-- admin.leader -->
+	<bean id="admin.leader.list" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.leader"></property>
+		<property name="viewTitle"	 value="リーダー検索"></property>
+		<property name="jspPage" value="/adminx/leader/leaderlist.jsp"></property>
+	</bean>
+	
+	<bean id="admin.leader.feedetail" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.leader"></property>
+		<property name="viewTitle"	 value="販売歩合検索"></property>
+		<property name="jspPage" value="/adminx/leader/feedetail.jsp"></property>
+	</bean>
+
+	<bean id="admin.leader.levelset" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.leader"></property>
+		<property name="viewTitle"	 value="リーダーセット"></property>
+		<property name="jspPage" value="/adminx/leader/levelset.jsp"></property>
+	</bean>
+	<!-- admin.payment -->
+	<!-- 查询应付管理，可以关联所有应付的明细,通过多选，可以进行应付操作-->
+	
+	<bean id="admin.payment.accountlist" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.payment"></property>
+		<property name="viewTitle"	 value="アカウント情報"></property>
+		<property name="jspPage" value="/adminx/user/accountlist.jsp"></property>
+	</bean>
+	
+	<bean id="admin.payment.auditlist" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.payment"></property>
+		<property name="viewTitle"	 value="処理待ち"></property>
+		<property name="jspPage" value="/adminx/payment/auditlist.jsp"></property>
+	</bean>
+	
+	<bean id="admin.payment.payablelist" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.payment"></property>
+		<property name="viewTitle"	 value="処理確認"></property>
+		<property name="jspPage" value="/adminx/payment/payablelist.jsp"></property>
+	</bean>
+	
+	<bean id="admin.payment.paystat" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.payment"></property>
+		<property name="viewTitle"	 value="統計表示"></property>
+		<property name="jspPage" value="/adminx/payment/paystat.jsp"></property>
+	</bean>
+	
+	<!-- admin.system -->
+	<bean id="admin.system.admininfo" class="com.sjs.ichigo.view.DirectViewPage">
+		<property name="viewParent" value="admin.system"></property>
+		<property name="viewTitle" value="管理者リスト"></property>
+		<property name="jspPage" value="/adminx/account/adminInfoPage.jsp"></property>
+	</bean>
+
+</beans>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="err.user.namenotmatch" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="The userid or nickname is not exist." />
+				<entry key="jp" value="The userid or nicknaxme is not exist." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.user.userorpassworderror" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="User or password is not right,please try again." />
+				<entry key="jp" value="User or password is not right,please try again." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.user.nicknamehasused" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en"
+					value="The nickname has already be used,please change new one." />
+				<entry key="jp"
+					value="The nickname has already be used,please change new one." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.coupons.coupousalreadyused" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en"
+					value="The golden pass has already be used,please change it into other one, and try again." />
+				<entry key="jp"
+					value="The golden pass has already be used,please change it into other one, and try again." />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="err.coupons.hasorder" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="The golden pass has be ordered." />
+				<entry key="jp"
+					value="The golden pass has already be used,please change it into other one, and try again." />
+			</map>
+		</property>
+	</bean>
+	<bean id="err.user.notrightinfomation" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en"
+					value="The information you submit is not right, and try again." />
+				<entry key="jp"
+					value="The information you submit is not right, and try again." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.user.logintypeisnotright" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en"
+					value="Your login type is not right, please confirm those information. " />
+				<entry key="jp"
+					value="Your login type is not right, please confirm those information. " />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.user.usernamecannotempty" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="The NickName or UserID can not be empty." />
+				<entry key="jp" value="The NickName or UserID can not be empty." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.user.passworcannotempty" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="The password can not be empty. " />
+				<entry key="jp" value="The password can not be empty. " />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.account.moneynotenough" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en"
+					value="The money of your account is not enough money for your apply." />
+				<entry key="jp"
+					value="The money of your account is not enough money for your apply." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.leader.ordergoldenunder3piece" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en"
+					value="You should order 1 piece of golden as leader first." />
+				<entry key="jp"
+					value="You should order 1 piece of golden as leader first." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.leader.ordergoldenunder1piece" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en"
+					value="You should order 1 piece of golden as leader first." />
+				<entry key="jp"
+					value="You should order 1 piece of golden as leader first." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.birthdayisnotrightfomat" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="The birthday is not right format." />
+				<entry key="jp" value="The birthday is not right format." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.coupons.cannotfind" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="Any golden pass can not be find." />
+				<entry key="jp" value="Any golden pass can not be find." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.user.notcurrentemail" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="The email is not right format." />
+				<entry key="jp" value="The email is not right format." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.order.usernotexist" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en"
+					value="The user is not exist, please confirm these infomation." />
+				<entry key="jp"
+					value="The user is not exist, please confirm these infomation." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.user.youarealreadymember" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="User have already be a member." />
+				<entry key="jp" value="User have already be a member." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.coupons.alreadyselfcoupons" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en"
+					value="A self coupons has already be used, you cannot do it again." />
+				<entry key="jp"
+					value="A self coupons has already be used, you cannot do it again." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.order.doesnotexist" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en"
+					value="The order has already be used,please change new one." />
+				<entry key="jp"
+					value="The order has already be used,please change new one." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.order.alreadyfinished" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="The order has already finished." />
+				<entry key="jp" value="The order has already finished." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.account.notexist" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="The account doestnot exist." />
+				<entry key="jp" value="The account doestnot exist." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.account.balancelowerzero" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en"
+					value="The balance of the account will be lower zeor if do this thing." />
+				<entry key="jp"
+					value="The balance of the account will be lower zeor if do this thing." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.coupon.getbounsafterbook" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="After got table bouns, can not do this thing." />
+				<entry key="jp" value="After got table bouns, can not do this thing." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.user.userisnotmember" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="User has not be a member." />
+				<entry key="jp" value="User has not be a member." />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="err.user.dotnotallowwithdraw" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="User cannot be allowed to notify of withdrawal." />
+				<entry key="jp" value="User cannot be allowed to notify of withdrawal." />
+			</map>
+		</property>
+	</bean>
+	<bean id="err.account.amountiszero" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="Amount of money is zeor." />
+				<entry key="jp" value="Amount of money is zeor." />
+			</map>
+		</property>
+	</bean>
+	<bean id="err.user.alreadyexit" class="com.sjs.ichigo.app.ErrorMessage"
+		scope="singleton">
+		<property name="langList">
+			<map>
+				<entry key="en" value="This user has already exit." />
+				<entry key="jp" value="This user has already exit." />
+			</map>
+		</property>
+	</bean>
+</beans>

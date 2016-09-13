@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<import resource="app_database.xml" />
+	<import resource="app_service.xml" />
+	<import resource="app_dataset.xml" />
+	<import resource="app_account.xml" />
+	<import resource="app_menu.xml" />
+	<import resource="app_error.xml" />
+	<import resource="app_applist.xml" />
+	
+	<import resource="app_test_config.xml" />
+	<import resource="app_test_2014.xml" />
+	<import resource="app_test_201401.xml" />
+	<import resource="app_test_201402.xml" />
+	
+	<bean id="ajax.xtabletree" class="com.sjs.ichigo.ajax.XTableTreeAjaxAction"
+		scope="singleton">
+	</bean>
+
+	<bean id="ajax.savedata" class="com.sjs.ichigo.ajax.SaveDataAjaxAction">
+	</bean>
+
+	<!-- 系统保存的过程 -->
+	<bean id="ajax.savedefault" class="com.sjs.ichigo.data.savedata.DefaultSaveAction">
+		<property name="dataSourceName" value="datasource.default"></property>
+	</bean>
+
+	
+	 
+</beans>
+
+
