@@ -217,22 +217,24 @@ public class BatchAppClient implements AppClient {
 		}
 
 		// 数据输出
-		Iterator iter = this.outMap.keySet().iterator();
+		Iterator<String> iter = this.outMap.keySet().iterator();
 		if (iter.hasNext()) {
-			String name = (String) iter.next();
+			String name = iter.next();
 			json.put(name, this.outMap.get(name));
 		}
 
 		return json;
 	}
 
-	protected JSONArray getJsonArray(List dataList) {
+	protected JSONArray getJsonArray(List<HashMap> dataList) {
 		JSONArray members = new JSONArray();
 		for (int i = 0; i < dataList.size(); i++) {
 			JSONObject member = new JSONObject();
-			HashMap map = (HashMap) dataList.get(i);
-			Set set = map.keySet();
-			for (Iterator it = set.iterator(); it.hasNext();) {
+			@SuppressWarnings("unchecked")
+			HashMap<String, Object> hashMap = dataList.get(i);
+			HashMap<String, Object> map = hashMap;
+			Set<String> set = map.keySet();
+			for (Iterator<String> it = set.iterator(); it.hasNext();) {
 				String key = it.next().toString();
 				member.put(key, map.get(key));
 			}
@@ -581,7 +583,7 @@ public class BatchAppClient implements AppClient {
 
 	protected AppData getAppDataFromSession(String uid) {
 		if (clientObjectList.containsKey(uid)) {
-			return (AppData) clientObjectList.get(uid);
+			return clientObjectList.get(uid);
 		}
 		return getAppDataFromGolbal(uid);
 	}
@@ -596,7 +598,7 @@ public class BatchAppClient implements AppClient {
 
 	protected static AppData getAppDataFromGolbal(String uid) {
 		if (appObjectList.containsKey(uid)) {
-			return (AppData) appObjectList.get(uid);
+			return appObjectList.get(uid);
 		}
 		return null;
 	}
@@ -629,7 +631,7 @@ public class BatchAppClient implements AppClient {
 		logList.add(logstr);
 	}
 
-	private HashMap actionMap = new HashMap();
+	private HashMap<String, String> actionMap = new HashMap<String, String>();
 
 	public String getActionId() {
 		String str = AppUtility.GetUUID();
@@ -880,12 +882,10 @@ public class BatchAppClient implements AppClient {
 	}
 
 	public List<String> getContextList(String string) {
-		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
 
 	public String[] getContexttArray(String string) {
-		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
 }

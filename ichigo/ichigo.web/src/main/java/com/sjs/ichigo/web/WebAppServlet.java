@@ -1,6 +1,5 @@
 package com.sjs.ichigo.web;
 
-
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -9,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
-import org.springframework.context.ApplicationContext;
 
 import com.sjs.ichigo.core.AppClient;
 import com.sjs.ichigo.core.IService;
@@ -30,6 +28,8 @@ public class WebAppServlet extends HttpServlet {
 
 		String contextPath = req.getContextPath();
 
+		System.out.println("contextPath=" + contextPath);
+
 		AppClient appClient = (AppClient) req.getSession().getAttribute("appclient");
 
 		if (appClient == null) {
@@ -37,9 +37,11 @@ public class WebAppServlet extends HttpServlet {
 			req.getSession().setAttribute("appclient", appClient);
 		}
 
+
+
 		String actionName = req.getRequestURI().substring(1 + contextPath.length()).replace('/', '.');
 
-		ApplicationContext applicationContext = SpringUtility.GetApplicationContext();
+		System.out.println("actionName=" + actionName);
 
 		IService service = null;
 
@@ -54,7 +56,7 @@ public class WebAppServlet extends HttpServlet {
 
 					appClient.open();
 
-					service = (IService) applicationContext.getBean(actionName);
+					service = (IService) SpringUtility.getBean(actionName);
 					service.setAppClient((AppClient) appClient);
 					service.exeService();
 
@@ -76,6 +78,8 @@ public class WebAppServlet extends HttpServlet {
 			}
 		} else {
 			JSONObject json = new JSONObject();
+			json.put("contextPath", contextPath);
+			json.put("actionName", actionName);
 			json.put("error", "cannot double submit.");
 			resp.getWriter().write(json.toString());
 		}

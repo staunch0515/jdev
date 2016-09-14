@@ -3,6 +3,8 @@
 	<name>ichigo.webapp</name>
 	<comment></comment>
 	<projects>
+		<project>ichigo</project>
+		<project>ichigo.web</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

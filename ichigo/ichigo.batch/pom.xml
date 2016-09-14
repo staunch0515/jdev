@@ -4,11 +4,11 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>sjs</groupId>
+		<groupId>com.sjs</groupId>
 		<artifactId>ichigo</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>sjs</groupId>
+	<groupId>com.sjs</groupId>
 	<artifactId>ichigo.batch</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ichigo.batch</name>
@@ -18,10 +18,9 @@
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
+			<groupId>com.sjs</groupId>
+			<artifactId>ichigo.core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
