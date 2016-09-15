@@ -13,7 +13,7 @@ public interface AppClient {
 
 	public abstract void addError(String errName, Object... obj1) throws AppException;
 
-	public abstract void save() throws AppException;
+	public abstract void save() throws AppException, SystemException;
 
 	public Boolean hasLogin();
 
@@ -56,9 +56,9 @@ public interface AppClient {
 
 	public abstract double getContextDouble(String string);
 
-	public abstract String getContextValue(String string);
+	public abstract String getContextValue(String string) throws SystemException;
 
-	public abstract Object getContextObject(String key);
+	public abstract Object getContextObject(String key) throws SystemException;
 
 	void setContextObject(String key, Object obj);
 
@@ -88,7 +88,7 @@ public interface AppClient {
 
 	public abstract String[] getContexttArray(String string);
 
-	public abstract void ExeService(String string) throws AppException;
+	public abstract void ExeService(String string) throws AppException, SystemException;
 
 	public abstract void log(String errName, Object... obj1);
 
@@ -108,7 +108,7 @@ public interface AppClient {
 
 	void end();
 
-	void setException(String str, Exception ex);
+	void setException(String str, Exception ex) throws SystemException;
 
 	public abstract void setLanguage(String contextValue);
 

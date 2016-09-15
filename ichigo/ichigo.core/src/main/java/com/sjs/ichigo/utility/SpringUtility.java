@@ -3,6 +3,7 @@ package com.sjs.ichigo.utility;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.sjs.ichigo.core.SystemException;
 
 public class SpringUtility {
 
@@ -20,18 +21,18 @@ public class SpringUtility {
 	private static ApplicationContext ac = null;
 
 	public static ApplicationContext GetApplicationContext() {
-
-		if (ac == null)
-			ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+		if (ac == null) {
+			ac = new ClassPathXmlApplicationContext("spring.xml");
+		}
 		return ac;
 	}
 
-	public static Object getBean(String key) {
+	public static Object getBean(String key) throws SystemException {
 		try {
 			return ac.getBean(key);
 		} catch (org.springframework.beans.factory.NoSuchBeanDefinitionException nex) {
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			ExceptionUtility.dispose("SpringUtility", "getBean", ex);
 		}
 		return null;
 	}

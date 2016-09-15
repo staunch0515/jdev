@@ -15,6 +15,10 @@ public class LogUtility {
 		logger.debug(message);
 	}
 
+	public static void debug(Object curObj, String method, String message) {
+		logger.debug(curObj.toString() + "." + method + "->" + message);
+	}
+
 	public static void info(String message) {
 		logger.info(message);
 	}

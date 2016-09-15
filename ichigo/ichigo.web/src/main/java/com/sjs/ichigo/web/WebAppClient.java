@@ -32,11 +32,13 @@ import com.sjs.ichigo.core.DataException;
 import com.sjs.ichigo.core.ErrorMessage;
 import com.sjs.ichigo.core.IService;
 import com.sjs.ichigo.core.MethodStatus;
+import com.sjs.ichigo.core.SystemException;
 import com.sjs.ichigo.data.DataServerFactory;
 import com.sjs.ichigo.data.IDataServer;
 import com.sjs.ichigo.data.IDataSet;
 import com.sjs.ichigo.utility.AppUtility;
 import com.sjs.ichigo.utility.DateTimeUtility;
+import com.sjs.ichigo.utility.LogUtility;
 import com.sjs.ichigo.utility.SpringUtility;
 import com.sjs.ichigo.utility.WebUtility;
 
@@ -162,7 +164,7 @@ public class WebAppClient implements AppClient {
 		throw exception;
 	}
 
-	public void setException(String str, Exception ex) {
+	public void setException(String str, Exception ex) throws SystemException {
 		this.log(str, ex.toString(), ex.getMessage());
 		this.log(getStackTrace(ex));
 		errorMessage = "_" + ex.getMessage();
@@ -316,7 +318,7 @@ public class WebAppClient implements AppClient {
 	 * @see com.sjs.ichigo.web.AppClient#getContextValue(java.lang.String)
 	 */
 
-	public String getContextValue(String key) {
+	public String getContextValue(String key) throws SystemException {
 		Object obj = getContextObject(key);
 
 		if (obj != null) {
@@ -336,7 +338,7 @@ public class WebAppClient implements AppClient {
 	 * @see com.sjs.ichigo.web.AppClient#getContextValue(java.lang.String)
 	 */
 
-	public Object getContextObject(String key) {
+	public Object getContextObject(String key) throws SystemException {
 		if (this.contextMap.get(key) != null) {
 			return this.contextMap.get(key);
 		}
@@ -716,10 +718,13 @@ public class WebAppClient implements AppClient {
 	}
 
 	public boolean canActionId(String actionid) {
+		LogUtility.debug(this, "canActionId", "actionMap:" + actionMap.size());
 		if (actionMap.containsKey(actionid)) {
 			Object action = actionMap.get(actionid);
 			if (action == null) {
 				return true;
+			} else {
+				return false;
 			}
 		}
 		return false;
@@ -792,7 +797,7 @@ public class WebAppClient implements AppClient {
 		return _appData;
 	}
 
-	public void save() throws AppException {
+	public void save() throws AppException, SystemException {
 		this.log("start  save data ");
 		try {
 			requestDataList.clear();
@@ -892,7 +897,7 @@ public class WebAppClient implements AppClient {
 		return WebUtility.getRequestArray(this.request, string);
 	}
 
-	public void ExeService(String serviceName) throws AppException {
+	public void ExeService(String serviceName) throws AppException, SystemException {
 		IService service = (IService) this.getContextObject(serviceName);
 		if (service != null) {
 			service.setAppClient((AppClient) this);
